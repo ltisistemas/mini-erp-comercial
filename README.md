@@ -3,6 +3,9 @@
 ##### Itens do sistema
 
 - Tela de Login
+  - [x] Layout
+  - [x] Funcionalidade
+  - [ ] Estilização
 - Cadastro interno de estado
 - Cadastro interno de cidades
 - Cadastro de empresa
