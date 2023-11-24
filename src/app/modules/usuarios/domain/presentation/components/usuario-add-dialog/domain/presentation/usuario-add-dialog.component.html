@@ -1,0 +1,63 @@
+<ngx-loading
+  [show]="processando"
+  [config]="{ backdropBorderRadius: '3px' }"
+></ngx-loading>
+<div class="container-page-dialog">
+  <h3 mat-dialog-title>Adicione / Edite um Usuário</h3>
+  <div mat-dialog-content>
+    <form [formGroup]="form">
+      <mat-form-field
+        style="width: 100%; flex: 1; padding-top: 8px"
+        cdkFocusInitial
+      >
+        <mat-label>Nome</mat-label>
+        <input
+          matInput
+          placeholder="Digite aqui o nome do usuário"
+          #inputnome
+          (focus)="inputnome.select()"
+          formControlName="nome"
+          cdkFocusInitial
+        />
+      </mat-form-field>
+      <mat-form-field
+        style="width: 100%; flex: 1; padding-top: 8px"
+        cdkFocusInitial
+        *ngIf="!data.usuario"
+      >
+        <mat-label>E-mail</mat-label>
+        <input
+          type="email"
+          matInput
+          placeholder="Digite aqui o e-mail do usuário"
+          #inputEmail
+          (focus)="inputEmail.select()"
+          formControlName="email"
+          cdkFocusInitial
+        />
+      </mat-form-field>
+      <mat-form-field
+        style="width: 100%; flex: 1; padding-top: 8px"
+        cdkFocusInitial
+        *ngIf="!data.usuario"
+      >
+        <mat-label>Senha</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Digite aqui a senha do usuário"
+          #inputPassword
+          (focus)="inputPassword.select()"
+          formControlName="password"
+          cdkFocusInitial
+        />
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions style="justify-content: flex-end">
+    <button mat-stroked-button color="warn" (click)="onNoClick()">
+      Fechar
+    </button>
+    <button mat-flat-button color="primary" (click)="handdle()">Salvar</button>
+  </div>
+</div>

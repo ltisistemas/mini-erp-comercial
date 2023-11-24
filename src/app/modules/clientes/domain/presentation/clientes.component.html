@@ -1,0 +1,37 @@
+<div class="lista-entradas">
+  <div class="title">
+    <b>Lista de Clientes</b>
+  </div>
+  <div class="list">
+    <div class="item {{ cliente.status }}" *ngFor="let cliente of clientes">
+      <mat-icon class="visibility" *ngIf="cliente.status === 'ATIVO'">
+        visibility
+      </mat-icon>
+      <mat-icon class="visibility" *ngIf="cliente.status !== 'ATIVO'">
+        visibility_off
+      </mat-icon>
+      <p>{{ cliente.nome_fantasia }} | {{ cliente.cpf_cnpj }}</p>
+      <button
+        mat-icon-button
+        color="primary"
+        style="margin-left: auto"
+        (click)="editar(cliente)"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        style="margin-left: auto"
+        (click)="status(cliente)"
+      >
+        <mat-icon *ngIf="cliente.status === 'ATIVO'">block</mat-icon>
+        <mat-icon *ngIf="cliente.status !== 'ATIVO'">task_alt</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="bottom-button">
+  <button mat-flat-button color="primary" (click)="adicionar()">
+    <mat-icon>add</mat-icon> Adicionar
+  </button>
+</div>

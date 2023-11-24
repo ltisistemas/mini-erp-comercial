@@ -1,0 +1,23 @@
+<ngx-loading
+  [show]="processando"
+  [config]="{ backdropBorderRadius: '3px' }"
+></ngx-loading>
+<p>
+  O usuário
+  <b
+    ><u
+      ><i>{{ usuarioEnvioNome }}</i></u
+    ></b
+  >
+  <br />
+  esta compartilhando com você a lista
+  <b
+    ><u
+      ><i>{{ listaAtualNome }}</i></u
+    ></b
+  >
+</p>
+
+<button mat-flat-button color="primary" (click)="goLista()">
+  Ir para Lista
+</button>

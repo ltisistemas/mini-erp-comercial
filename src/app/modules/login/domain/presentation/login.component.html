@@ -1,0 +1,39 @@
+<ngx-loading
+  [show]="processando"
+  [config]="{ backdropBorderRadius: '3px' }"
+></ngx-loading>
+
+<div class="container-page">
+  <div class="janela">
+    <img src="assets/img/logomarca.png" class="logomarca" />
+    <form [formGroup]="credentials">
+      <mat-form-field cdkFocusInitial>
+        <mat-label>E-mail</mat-label>
+        <input
+          type="email"
+          matInput
+          placeholder="Digite seu o e-mail"
+          #inputEmail
+          (focus)="inputEmail.select()"
+          formControlName="email"
+          cdkFocusInitial
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Digite aqui a senha do usuário"
+          #inputPassword
+          (focus)="inputPassword.select()"
+          formControlName="password"
+        />
+      </mat-form-field>
+      <div class="linha-botoes">
+        <button mat-flat-button (click)="login()">Efetuar Login</button>
+        <a mat-button color="primary">Esqueci minha senha!</a>
+      </div>
+    </form>
+  </div>
+</div>
