@@ -28,5 +28,3 @@
 - Vendas do dia p/ Cliente
 - Fechamento de caixa
 - Abertura de caixa
-
-$2a$10$B.eVSJauTPMCMTqXLUGg6ORzzbepOEXcURYLA4Iz0eQXP3JMb2KFm
