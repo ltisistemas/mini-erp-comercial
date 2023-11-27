@@ -5,9 +5,11 @@
 - Tela de Login
   - [x] Layout
   - [x] Funcionalidade
-  - [ ] Estilização
+  - [x] Estilização
 - Cadastro interno de estado
+  - [x] Realizado
 - Cadastro interno de cidades
+  - [x] Realizado
 - Cadastro de empresa
   - Cadastro de usuário
 - Cadastro de cliente
