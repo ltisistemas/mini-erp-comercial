@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import {
   ActivatedRouteSnapshot,
   CanActivate,
   Router,
   RouterStateSnapshot,
-} from '@angular/router';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { GeneralUserControllerService } from 'src/app/modules/login/domain/controllers/general-user-controller.service';
-import { environment } from 'src/environments/environment';
+} from "@angular/router";
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { GeneralUserControllerService } from "src/app/pages/login/domain/controllers/general-user-controller.service";
+import { environment } from "src/environments/environment";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class AuthGuard implements CanActivate {
   constructor(
     private router: Router,
@@ -23,13 +23,13 @@ export class AuthGuard implements CanActivate {
   ): boolean {
     const token = localStorage.getItem(environment.storage.token);
     if (!token) {
-      this.router.navigate(['login']);
+      this.router.navigate(["login"]);
       return false;
     }
 
     const auth = this.isAuthenticated(token);
     if (!auth) {
-      this.router.navigate(['login']);
+      this.router.navigate(["login"]);
       return false;
     }
 

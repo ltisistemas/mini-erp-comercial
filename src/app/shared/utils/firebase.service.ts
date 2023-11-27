@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
-import { FirebaseApp, initializeApp } from 'firebase/app';
-import { Analytics, getAnalytics } from 'firebase/analytics';
+import { FirebaseApp, initializeApp } from "firebase/app";
+import { Analytics, getAnalytics } from "firebase/analytics";
 import {
   GoogleAuthProvider,
   UserCredential,
@@ -11,7 +11,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signInWithRedirect,
-} from 'firebase/auth';
+} from "firebase/auth";
 import {
   DocumentSnapshot,
   WriteBatch,
@@ -24,7 +24,7 @@ import {
   query,
   where,
   writeBatch,
-} from 'firebase/firestore';
+} from "firebase/firestore";
 import {
   deleteObject,
   getBlob,
@@ -33,14 +33,14 @@ import {
   getStorage,
   ref,
   uploadBytes,
-} from 'firebase/storage';
+} from "firebase/storage";
 
-import { environment } from 'src/environments/environment';
-import { UsuarioLogado } from 'src/app/modules/login/domain/entities/usuario-logado';
-import { UsuarioFornecedorLogado } from 'src/app/modules/login/domain/entities/usuario-fornecedor-logado';
+import { environment } from "src/environments/environment";
+import { UsuarioLogado } from "src/app/shared/entities/usuario-logado";
+import { UsuarioFornecedorLogado } from "src/app/pages/login/entities/usuario-fornecedor-logado";
 // import { UsuarioFornecedor } from 'src/app/modules/usuarios-fornecedor/domain/entities/usuario-fornecedor';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class FirebaseService {
   private _app: FirebaseApp;
   private _analytics: Analytics;
@@ -52,7 +52,7 @@ export class FirebaseService {
 
     this._provider = new GoogleAuthProvider();
     this._provider.setCustomParameters({
-      prompt: 'select_account',
+      prompt: "select_account",
     });
   }
 
@@ -180,7 +180,7 @@ export class FirebaseService {
     const usuario = localStorage.getItem(environment.storage.usuario);
     if (usuario) {
       const user = JSON.parse(usuario);
-      return user.hasOwnProperty('cliente_id')
+      return user.hasOwnProperty("cliente_id")
         ? (user as UsuarioLogado)
         : (user as UsuarioFornecedorLogado);
     }
@@ -192,7 +192,7 @@ export class FirebaseService {
     const db = this.db;
     const q = query(
       collection(db, table_name),
-      where(table_field_id, '==', table_id)
+      where(table_field_id, "==", table_id)
     );
 
     return q;
@@ -206,7 +206,7 @@ export class FirebaseService {
 
   async getSnapshot(options: { table: string; campo: string; valor: string }) {
     const ref = collection(this.db, options.table);
-    const q = query(ref, where(options.campo, '==', options.valor));
+    const q = query(ref, where(options.campo, "==", options.valor));
     const snapshot = await getDocs(q);
 
     return snapshot.size > 0 ? snapshot : null;
@@ -282,7 +282,7 @@ export class FirebaseService {
 
     return getBlob(ref(storage, path))
       .then((blob) => blob)
-      .catch((err) => console.log('> [ERRO]', err));
+      .catch((err) => console.log("> [ERRO]", err));
   }
 
   async deleteFile(path: string) {
@@ -292,7 +292,7 @@ export class FirebaseService {
       // Delete the file
       return await deleteObject(docRef);
     } catch (error) {
-      throw new Error('Erro ao realizar a exclusão do arquivo');
+      throw new Error("Erro ao realizar a exclusão do arquivo");
     }
   }
 

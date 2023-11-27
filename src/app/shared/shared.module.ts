@@ -1,16 +1,16 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from './utils/material.module';
-import { NgxDropzoneModule } from 'ngx-dropzone';
-import { NgxLoadingModule } from 'ngx-loading';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MaterialModule } from "./utils/material.module";
+import { NgxDropzoneModule } from "ngx-dropzone";
+import { NgxLoadingModule } from "ngx-loading";
 import {
   IConfig,
   NgxMaskDirective,
   NgxMaskPipe,
   provideEnvironmentNgxMask,
   provideNgxMask,
-} from 'ngx-mask';
-import { ClipboardModule } from 'ngx-clipboard';
+} from "ngx-mask";
+import { ClipboardModule } from "ngx-clipboard";
 
 const maskConfig: Partial<IConfig> = {
   validation: false,

@@ -4,21 +4,23 @@ import {
   LOCALE_ID,
   NgModule,
   isDevMode,
-} from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FirebaseService } from './shared/utils/firebase.service';
-import { ModulesModule } from './modules/modules.module';
-import { CommonModule, registerLocaleData } from '@angular/common';
-import localePT from '@angular/common/locales/pt';
-import { MaterialModule } from './shared/utils/material.module';
-import { environment } from 'src/environments/environment';
-import { JwtModule } from '@auth0/angular-jwt';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { HomeService } from './shared/services/home.service';
-import { CoreControllerService } from './modules/core/controllers/core-controller.service';
+} from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FirebaseService } from "./shared/utils/firebase.service";
+import { ModulesModule } from "./pages/modules.module";
+import { CommonModule, registerLocaleData } from "@angular/common";
+import localePT from "@angular/common/locales/pt";
+import { MaterialModule } from "./shared/utils/material.module";
+import { environment } from "src/environments/environment";
+import { JwtModule } from "@auth0/angular-jwt";
+import { ServiceWorkerModule } from "@angular/service-worker";
+import { HomeService } from "./shared/services/home.service";
+import { CoreControllerService } from "./pages/core/controllers/core-controller.service";
+import { GenerateJwtService } from "./shared/services/generate-jwt.service";
+import { LocalStorageService } from "./shared/services/localstorage.service";
 
 registerLocaleData(localePT);
 
@@ -41,19 +43,21 @@ export function tokenGetter() {
         tokenGetter: tokenGetter,
       },
     }),
-    ServiceWorkerModule.register('ngsw-worker.js', {
+    ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000',
+      registrationStrategy: "registerWhenStable:30000",
     }),
   ],
   providers: [
     FirebaseService,
     CoreControllerService,
-    { provide: LOCALE_ID, useValue: 'pt-BR' },
-    { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
+    { provide: LOCALE_ID, useValue: "pt-BR" },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: "BRL" },
     HomeService,
+    GenerateJwtService,
+    LocalStorageService,
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
