@@ -25,7 +25,27 @@
       </p>
       <a mat-button class="visualizar-todos"> Ver todos os pedidos do dia </a>
     </div>
-    <div class="center"></div>
+    <div class="center">
+      <div class="graph"></div>
+      <button class="cta" mat-button>
+        <mat-icon>touch_app</mat-icon>
+        <span>Abrir caixa</span>
+      </button>
+      <div class="cards">
+        <button mat-button class="card saida">
+          <mat-icon>trending_up</mat-icon>
+          <span>Saída</span>
+        </button>
+        <button mat-button class="card entrada">
+          <mat-icon>trending_down</mat-icon>
+          <span>Entrada</span>
+        </button>
+        <button mat-button class="card logout" (click)="go('login')">
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </button>
+      </div>
+    </div>
     <div class="right"></div>
   </main>
   <footer></footer>
