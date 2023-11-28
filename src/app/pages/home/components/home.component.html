@@ -1,4 +1,36 @@
-<mat-drawer-container [hasBackdrop]="true" class="example-container" autosize>
+<div class="portal">
+  <header>
+    <div class="logomarca"><img src="assets/img/logomarca.png" /></div>
+
+    <div class="menu">
+      <!-- <mat-button-toggle-group name="fontStyle" color="primary">
+        <mat-button-toggle value="resumo">Visão geral</mat-button-toggle>
+        <mat-button-toggle value="pdv">PDV</mat-button-toggle>
+        <mat-button-toggle value="pedidos">Pedidos</mat-button-toggle>
+      </mat-button-toggle-group> -->
+      <div class="group-buttons">
+        <div class="btn-active">Visão geral</div>
+        <div>PDV</div>
+        <div>Pedidos</div>
+      </div>
+    </div>
+
+    <div class="profile">Bem vindo, {{ usuarioLogado.nome }}</div>
+  </header>
+  <main>
+    <div class="left">
+      <p class="ultimos-pedidos">
+        <mat-icon>grading</mat-icon>
+        <span>Ultimos pedidos</span>
+      </p>
+      <a mat-button class="visualizar-todos"> Ver todos os pedidos do dia </a>
+    </div>
+    <div class="center"></div>
+    <div class="right"></div>
+  </main>
+  <footer></footer>
+</div>
+<!-- <mat-drawer-container [hasBackdrop]="true" class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="over">
     <img
       src="assets/img/logomarca.png"
@@ -59,4 +91,4 @@
       <router-outlet></router-outlet>
     </main>
   </div>
-</mat-drawer-container>
+</mat-drawer-container> -->

@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HomeComponent } from '../presentation/home.component';
+import { Injectable } from "@angular/core";
+import { HomeComponent } from "../../components/home.component";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class HomeControllerService {
   constructor() {}
 

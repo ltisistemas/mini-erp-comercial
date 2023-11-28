@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { HomeComponent } from "./domain/presentation/home.component";
+import { HomeComponent } from "./components/home.component";
 import { ClientesModule } from "../clientes/clientes.module";
 import { UsuariosModule } from "../usuarios/usuarios.module";
 import { FornecedoresModule } from "../fornecedores/fornecedores.module";
