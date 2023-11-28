@@ -33,11 +33,11 @@
       </button>
       <div class="cards">
         <button mat-button class="card saida">
-          <mat-icon>trending_up</mat-icon>
+          <mat-icon>upload</mat-icon>
           <span>Saída</span>
         </button>
         <button mat-button class="card entrada">
-          <mat-icon>trending_down</mat-icon>
+          <mat-icon>download</mat-icon>
           <span>Entrada</span>
         </button>
         <button mat-button class="card logout" (click)="go('login')">
@@ -46,7 +46,26 @@
         </button>
       </div>
     </div>
-    <div class="right"></div>
+    <div class="right">
+      <div class="cards">
+        <button mat-button class="card">
+          <mat-icon>person</mat-icon>
+          <span>Informações do clientes</span>
+        </button>
+        <button mat-button class="card">
+          <mat-icon>redeem</mat-icon>
+          <span>Cadastro de produtos</span>
+        </button>
+        <button mat-button class="card">
+          <mat-icon>dashboard</mat-icon>
+          <span>Dados de fornecedor</span>
+        </button>
+        <button mat-button class="card">
+          <mat-icon>explore</mat-icon>
+          <span>Entrada de estoque</span>
+        </button>
+      </div>
+    </div>
   </main>
   <footer></footer>
 </div>
