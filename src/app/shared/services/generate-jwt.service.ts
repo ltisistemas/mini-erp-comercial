@@ -5,7 +5,12 @@ import { Injectable } from "@angular/core";
 
 @Injectable({ providedIn: "root" })
 export class GenerateJwtService {
-  generate(sub: string | number, nome: string, email: string) {
+  generate(
+    sub: string | number,
+    sub_empresa: string | number,
+    nome: string,
+    email: string
+  ) {
     let header: any = {
       alg: "HS256",
       typ: "JWT",
@@ -17,7 +22,7 @@ export class GenerateJwtService {
 
     const iat = moment().toDate();
 
-    let payload: any = { iat, exp, sub, nome, email };
+    let payload: any = { iat, exp, sub, empresa_id: sub_empresa, nome, email };
 
     payload = crypto.enc.Utf8.parse(JSON.stringify(payload));
     payload = this.base64url(payload);

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { UsuarioLogadoUsecaseService } from "src/app/shared/use-cases/usuario-logado-usecase.service";
 import { FirebaseService } from "src/app/shared/utils/firebase.service";
 import { environment } from "src/environments/environment";
-import { ClienteNotFound } from "../errors/cliente-error";
+import { ClienteError, ClienteNotFound } from "../errors/cliente-error";
 import { Cliente } from "../entities/cliente";
 
 @Injectable({ providedIn: "root" })
@@ -17,8 +17,8 @@ export class ClienteService {
 
     const snapshot = await this.api.getSnapshot({
       table: environment.tabelas.clientes,
-      campo: "cliente_id",
-      valor: usuario.cliente_id!,
+      campo: "empresa_id",
+      valor: usuario.empresa_id,
     });
 
     if (snapshot) {
@@ -28,6 +28,7 @@ export class ClienteService {
         const data = doc.data() as Cliente;
         const cliente = new Cliente({
           uid: doc.id,
+          empresa_id: data.empresa_id,
           nome: data.nome,
           cpf_cnpj: data.cpf_cnpj,
           email: data.email,
@@ -50,5 +51,32 @@ export class ClienteService {
     }
 
     return new ClienteNotFound();
+  }
+
+  async incluir(cliente: Cliente): Promise<boolean | ClienteError> {
+    try {
+      const request = {
+        empresa_id: cliente.empresa_id,
+        nome: cliente.nome,
+        cpf_cnpj: cliente.cpf_cnpj,
+        email: cliente.email,
+        telefone: cliente.telefone,
+        cep: cliente.cep,
+        logradouro: cliente.logradouro,
+        numero: cliente.numero,
+        complemento: cliente.complemento,
+        bairro: cliente.bairro,
+        cidade: cliente.cidade,
+        estado: cliente.estado,
+        estado_uf: cliente.estado_uf,
+        status: "ATIVO",
+      };
+
+      await this.api.addDOcument(environment.tabelas.clientes, request);
+
+      return true;
+    } catch (err) {
+      return new ClienteError("Houve um erro ao tentar salvar");
+    }
   }
 }

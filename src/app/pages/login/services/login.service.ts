@@ -40,13 +40,18 @@ export class LoginService {
       } as ResponseMessage;
     }
 
+    const dataResponse = {
+      id: doc.id,
+      email: data.email,
+      nome: data.nome,
+      empresa_id: data.empresa_id,
+      status: data.status,
+    } as UsuarioLogado;
+
     return {
-      data: {
-        ...data,
-        id: doc.id,
-      } as UsuarioLogado,
+      data: dataResponse,
       statusCode: 200,
-      message: "Usuário encontrado com sucess",
+      message: "Login realizado com sucesso",
     } as ResponseMessage;
   }
 }

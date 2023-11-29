@@ -1,9 +1,6 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
 import { HomeComponent } from "./components/home.component";
-import { ClientesModule } from "../clientes/clientes.module";
-import { UsuariosModule } from "../usuarios/usuarios.module";
-import { FornecedoresModule } from "../fornecedores/fornecedores.module";
 
 export const routes: Routes = [
   {
@@ -15,21 +12,6 @@ export const routes: Routes = [
         component: HomeComponent,
         pathMatch: "full",
         // loadChildren: () => CotacoesModule,
-      },
-      {
-        path: "clientes",
-        pathMatch: "full",
-        loadChildren: () => ClientesModule,
-      },
-      {
-        path: "fornecedores",
-        pathMatch: "full",
-        loadChildren: () => FornecedoresModule,
-      },
-      {
-        path: "usuarios",
-        pathMatch: "full",
-        loadChildren: () => UsuariosModule,
       },
     ],
   },

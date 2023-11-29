@@ -1,12 +1,12 @@
 export class UsuarioLogado {
   id: string;
-  cliente_id?: string;
+  empresa_id: string;
   google_id?: string;
   nome: string;
   email: string;
   password?: string | null;
-  status: 'ATIVO' | 'INATIVO';
-  profile?: 'ADMIN' | 'PROFESSOR' | 'ALUNO';
+  status: "ATIVO" | "INATIVO";
+  profile?: "ADMIN" | "PROFESSOR" | "ALUNO";
 
   constructor(t: UsuarioLogado) {
     this.id = t.id;
@@ -15,7 +15,7 @@ export class UsuarioLogado {
     this.password = t.password;
     this.status = t.status;
     this.google_id = t.google_id;
-    this.cliente_id = t.cliente_id;
+    this.empresa_id = t.empresa_id;
     this.profile = t.profile;
   }
 }

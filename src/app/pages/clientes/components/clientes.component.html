@@ -1,6 +1,185 @@
 <h1 mat-dialog-title>Informações dos clientes</h1>
 <div mat-dialog-content>
-  <table mat-table [dataSource]="datasource" class="mat-elevation-z1"></table>
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+      style="margin-bottom: 16px"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>Cadastrar novo cliente</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="form">
+        <div class="linha">
+          <mat-form-field style="width: 100%; padding-top: 8px" cdkFocusInitial>
+            <mat-label>Nome</mat-label>
+            <input
+              type="text"
+              matInput
+              #inputnome
+              (focus)="inputnome.select()"
+              formControlName="nome"
+              cdkFocusInitial
+            />
+          </mat-form-field>
+          <mat-form-field style="width: 100%; padding-top: 8px">
+            <mat-label>CPF / CNPJ</mat-label>
+            <input
+              type="text"
+              matInput
+              #inputcpf_cnpj
+              (focus)="inputcpf_cnpj.select()"
+              formControlName="cpf_cnpj"
+            />
+          </mat-form-field>
+        </div>
+        <div class="linha">
+          <mat-form-field style="width: 100%; padding-top: 8px" cdkFocusInitial>
+            <mat-label>E-mail</mat-label>
+            <input
+              type="email"
+              matInput
+              #inputemail
+              (focus)="inputemail.select()"
+              formControlName="email"
+              cdkFocusInitial
+            />
+          </mat-form-field>
+          <mat-form-field style="width: 100%; padding-top: 8px">
+            <mat-label>Telefone</mat-label>
+            <input
+              type="tel"
+              matInput
+              #inputtelefone
+              (focus)="inputtelefone.select()"
+              formControlName="telefone"
+            />
+          </mat-form-field>
+        </div>
+        <div class="linha">
+          <mat-form-field style="width: 100%; padding-top: 8px" cdkFocusInitial>
+            <mat-label>CEP</mat-label>
+            <input
+              type="tel"
+              matInput
+              #inputcep
+              (focus)="inputcep.select()"
+              formControlName="cep"
+              cdkFocusInitial
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              color="accent"
+              (click)="pesquisarCep()"
+            >
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field style="width: 100%; padding-top: 8px">
+            <mat-label>Rua</mat-label>
+            <input
+              type="text"
+              matInput
+              #inputlogradouro
+              (focus)="inputlogradouro.select()"
+              formControlName="logradouro"
+            />
+          </mat-form-field>
+        </div>
+        <div class="linha">
+          <mat-form-field style="width: 100%; padding-top: 8px">
+            <mat-label>Numero</mat-label>
+            <input
+              type="text"
+              matInput
+              #inputnumero
+              (focus)="inputnumero.select()"
+              formControlName="numero"
+            />
+          </mat-form-field>
+          <mat-form-field style="width: 100%; padding-top: 8px">
+            <mat-label>Complemento</mat-label>
+            <input
+              type="text"
+              matInput
+              #inputcomplemento
+              (focus)="inputcomplemento.select()"
+              formControlName="complemento"
+            />
+          </mat-form-field>
+        </div>
+        <div class="linha">
+          <mat-form-field style="width: 100%; padding-top: 8px">
+            <mat-label>Bairro</mat-label>
+            <input
+              type="text"
+              matInput
+              #inputbairro
+              (focus)="inputbairro.select()"
+              formControlName="bairro"
+            />
+          </mat-form-field>
+          <mat-form-field style="width: 100%; padding-top: 8px">
+            <mat-label>Cidade</mat-label>
+            <input
+              type="text"
+              matInput
+              #inputcidade
+              (focus)="inputcidade.select()"
+              formControlName="cidade"
+            />
+          </mat-form-field>
+        </div>
+        <div class="linha">
+          <mat-form-field style="width: 100%; padding-top: 8px">
+            <mat-label>Estado</mat-label>
+            <input
+              type="text"
+              matInput
+              #inputestado
+              (focus)="inputestado.select()"
+              formControlName="estado"
+            />
+          </mat-form-field>
+          <span></span>
+        </div>
+        <div class="action-buttons">
+          <button mat-stroked-button color="warn" (click)="clearForm()">
+            Limpar
+          </button>
+          <button mat-flat-button color="primary" (click)="onHanddle()">
+            Salvar
+          </button>
+        </div>
+      </form>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <table mat-table [dataSource]="datasource" class="mat-elevation-z1">
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let element">{{ element.nome }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>E-mail</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="telefone">
+      <th mat-header-cell *matHeaderCellDef>Telefone</th>
+      <td mat-cell *matCellDef="let element">{{ element.telefone }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="bairro">
+      <th mat-header-cell *matHeaderCellDef>Bairro</th>
+      <td mat-cell *matCellDef="let element">{{ element.bairro }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Fechar</button>

@@ -1,5 +1,6 @@
 export class Cliente {
   uid: string;
+  empresa_id: string;
   nome: string;
   cpf_cnpj?: string;
   email?: string;
@@ -16,6 +17,7 @@ export class Cliente {
 
   constructor(t: Cliente) {
     this.uid = t.uid;
+    this.empresa_id = t.empresa_id;
     this.nome = t.nome;
     this.cpf_cnpj = t.cpf_cnpj;
     this.email = t.email;

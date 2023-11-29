@@ -29,17 +29,15 @@ export class EfetuarLoginService {
 
     const usuarioLogado = {
       id: response.data.id,
-      cliente_id: response.data.cliente_id,
-      google_id: response.data.google_id,
       nome: response.data.nome,
       email: response.data.email,
-      password: response.data.password,
+      empresa_id: response.data.empresa_id,
       status: response.data.status,
-      profile: response.data.profile,
     } as UsuarioLogado;
 
     const accessToken = this.jwt.generate(
       usuarioLogado.id,
+      usuarioLogado.empresa_id,
       usuarioLogado.nome,
       usuarioLogado.email
     );

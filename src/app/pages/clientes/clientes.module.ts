@@ -6,6 +6,9 @@ import { ClienteDialogComponent } from "./domain/presentation/components/cliente
 import { SharedModule } from "src/app/shared/shared.module";
 import { ClienteService } from "./services/clientes.service";
 import { ListarClientesService } from "./use-cases/listar-clientes.service";
+import { PesquisarCepService } from "./use-cases/pesquisar-cep.service";
+import { CepService } from "./services/cep.service";
+import { IncluirClienteService } from "./use-cases/incluir-cliente.service";
 
 @NgModule({
   imports: [CommonModule, SharedModule, ClientesRoutingModule],
@@ -14,6 +17,9 @@ import { ListarClientesService } from "./use-cases/listar-clientes.service";
   providers: [
     ClienteService,
     ListarClientesService,
+    PesquisarCepService,
+    CepService,
+    IncluirClienteService,
     // ClienteControllerService,
     // ClienteDialogControllerService,
   ],
