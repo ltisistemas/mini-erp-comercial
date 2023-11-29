@@ -13,6 +13,9 @@
 - Cadastro de empresa
   - Cadastro de usuário
 - Cadastro de cliente
+  - [x] Layout
+  - [x] Funcionalidade
+  - [x] Estilização
 - Cadastro de produtos
   - Cadastro de categoria / Subcategoria
 - Cadastro de Fornecedores
