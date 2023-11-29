@@ -1,4 +1,11 @@
-<div class="lista-entradas">
+<h1 mat-dialog-title>Informações dos clientes</h1>
+<div mat-dialog-content>
+  <table mat-table [dataSource]="datasource" class="mat-elevation-z1"></table>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Fechar</button>
+</div>
+<!-- <div class="lista-entradas">
   <div class="title">
     <b>Lista de Clientes</b>
   </div>
@@ -34,4 +41,4 @@
   <button mat-flat-button color="primary" (click)="adicionar()">
     <mat-icon>add</mat-icon> Adicionar
   </button>
-</div>
+</div> -->

@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { ClienteDialogControllerService } from "../controllers/cliente-dialog-controller.service";
-import { Cliente } from "src/app/pages/clientes/domain/entities/cliente";
+import { Cliente } from "src/app/pages/clientes/entities/cliente";
 
 interface DialogData {
   lojaId: string;

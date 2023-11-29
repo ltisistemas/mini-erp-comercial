@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { HomeControllerService } from "../domain/controllers/home-controller.service";
 import { Router } from "@angular/router";
 import { environment } from "src/environments/environment";
-import { HomeService } from "src/app/shared/services/home.service";
-import { UsuarioLogadoService } from "../use-cases/usuario-logado.service";
 import { UsuarioLogado } from "src/app/shared/entities/usuario-logado";
+import { MatDialog } from "@angular/material/dialog";
+import { ClientesComponent } from "../../clientes/components/clientes.component";
+import { UsuarioLogadoUsecaseService } from "src/app/shared/use-cases/usuario-logado-usecase.service";
 
 @Component({
   selector: "app-home",
@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
   usuarioLogado: UsuarioLogado;
   title = "LTI PDV";
   tituloAlterado = false;
+
+  sizes = { width: "", height: "" };
 
   menuItens = [
     {
@@ -70,30 +72,20 @@ export class HomeComponent implements OnInit {
   }
 
   constructor(
-    private controller: HomeControllerService,
     private router: Router,
-    private homeService: HomeService,
-    private usuarioLogadoService: UsuarioLogadoService
+    private usuarioLogadoService: UsuarioLogadoUsecaseService,
+    private dialog: MatDialog // private layout: Layout
   ) {
     this.usuarioLogado = this.usuarioLogadoService.buscarUsuarioLogado();
 
     const token = localStorage.getItem(environment.storage.token);
     this.isLogged = !!!(token === null);
-
-    this.homeService.$home.asObservable().subscribe((titulo) => {
-      if (titulo !== "") {
-        this.title = titulo;
-        this.tituloAlterado = true;
-        return;
-      }
-
-      this.title = "Cota pra Mim";
-      this.tituloAlterado = false;
-    });
   }
 
   ngOnInit() {
-    this.controller.init(this);
+    // this.controller.init(this);
+
+    this.setSize();
   }
 
   go(route: string, drawer?: any) {
@@ -101,8 +93,27 @@ export class HomeComponent implements OnInit {
     if (drawer) drawer.toggle();
   }
 
-  goHome() {
-    this.homeService.$home.next("");
-    this.go("");
+  abrirModalCliente() {
+    this.abrirModal(ClientesComponent, {});
+  }
+
+  private abrirModal(component: any, data: any) {
+    this.dialog.open(component, {
+      width: this.sizes.width,
+      height: this.sizes.height,
+      disableClose: true,
+      hasBackdrop: true,
+      data,
+    });
+  }
+
+  private setSize() {
+    const win = {
+      height: window.innerHeight * 0.9,
+      width: window.innerWidth * 0.9,
+    };
+
+    this.sizes.height = `${win.height}px`;
+    this.sizes.width = `${win.width}px`;
   }
 }

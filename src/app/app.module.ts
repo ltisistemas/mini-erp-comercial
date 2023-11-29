@@ -21,6 +21,8 @@ import { HomeService } from "./shared/services/home.service";
 import { CoreControllerService } from "./pages/core/controllers/core-controller.service";
 import { GenerateJwtService } from "./shared/services/generate-jwt.service";
 import { LocalStorageService } from "./shared/services/localstorage.service";
+import { UsuarioLogadoUsecaseService } from "./shared/use-cases/usuario-logado-usecase.service";
+import { UsuarioLogadoService } from "./shared/services/usuario-logado.service";
 
 registerLocaleData(localePT);
 
@@ -56,6 +58,8 @@ export function tokenGetter() {
     { provide: LOCALE_ID, useValue: "pt-BR" },
     { provide: DEFAULT_CURRENCY_CODE, useValue: "BRL" },
     HomeService,
+    UsuarioLogadoUsecaseService,
+    UsuarioLogadoService,
     GenerateJwtService,
     LocalStorageService,
   ],

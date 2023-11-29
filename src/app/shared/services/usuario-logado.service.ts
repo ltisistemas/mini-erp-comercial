@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
-import { UsuarioLogado } from "src/app/shared/entities/usuario-logado";
-import { FirebaseService } from "src/app/shared/utils/firebase.service";
+import { UsuarioLogado } from "../entities/usuario-logado";
+import { FirebaseService } from "../utils/firebase.service";
 
 @Injectable({ providedIn: "root" })
-export class HomeService {
+export class UsuarioLogadoService {
   constructor(private api: FirebaseService) {}
 
   buscarUsuarioLogado() {

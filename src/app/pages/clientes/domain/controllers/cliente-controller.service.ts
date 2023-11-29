@@ -1,18 +1,18 @@
-import { Injectable } from '@angular/core';
-import { Cliente } from '../entities/cliente';
-import { FirebaseService } from 'src/app/shared/utils/firebase.service';
-import { ClientesComponent } from '../presentation/clientes.component';
-import { ClienteDialogComponent } from '../presentation/components/cliente-dialog/domain/presentation/cliente-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
-import { QuerySnapshot } from 'firebase/firestore';
+import { Injectable } from "@angular/core";
+import { Cliente } from "../../entities/cliente";
+import { FirebaseService } from "src/app/shared/utils/firebase.service";
+import { ClientesComponent } from "../../components/clientes.component";
+import { ClienteDialogComponent } from "../presentation/components/cliente-dialog/domain/presentation/cliente-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
+import { QuerySnapshot } from "firebase/firestore";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class ClienteControllerService {
   constructor(private service: FirebaseService, private dialog: MatDialog) {}
 
   init(component: ClientesComponent) {
     this.service.getOnSnapshotWithoutQuery({
-      table_name: 'clientes',
+      table_name: "clientes",
       callback: (snapshot: QuerySnapshot) => {
         component.clientes = [];
         const clientes: Cliente[] = [];
@@ -51,10 +51,10 @@ export class ClienteControllerService {
     const usuario = this.service.getUsuarioLogado();
 
     this.dialog.open(ClienteDialogComponent, {
-      width: '100%',
-      maxWidth: '100%',
-      height: '100%',
-      maxHeight: '100%',
+      width: "100%",
+      maxWidth: "100%",
+      height: "100%",
+      maxHeight: "100%",
       disableClose: true,
       hasBackdrop: true,
       data: {
@@ -67,10 +67,10 @@ export class ClienteControllerService {
     const usuario = this.service.getUsuarioLogado();
 
     this.dialog.open(ClienteDialogComponent, {
-      width: '100%',
-      maxWidth: '100%',
-      height: '100%',
-      maxHeight: '100%',
+      width: "100%",
+      maxWidth: "100%",
+      height: "100%",
+      maxHeight: "100%",
       disableClose: true,
       hasBackdrop: true,
       data: {
@@ -81,8 +81,8 @@ export class ClienteControllerService {
   }
 
   async status(cliente: Cliente) {
-    const status = cliente.status === 'ATIVO' ? 'INATIVO' : 'ATIVO';
+    const status = cliente.status === "ATIVO" ? "INATIVO" : "ATIVO";
 
-    await this.service.updateDOcument('clientes', cliente.uid, { status });
+    await this.service.updateDOcument("clientes", cliente.uid, { status });
   }
 }

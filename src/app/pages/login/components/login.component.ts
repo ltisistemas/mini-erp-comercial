@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { environment } from "src/environments/environment";
-import { LoginControllerService } from "../domain/controllers/login-controller.service";
 import { tiposDeClientes } from "../entities/tipo-login-enum";
 import { EfetuarLoginService } from "../use-cases/efetuar-login.service";
 import { LocalStorageService } from "src/app/shared/services/localstorage.service";

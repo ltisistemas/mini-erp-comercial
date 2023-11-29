@@ -8,13 +8,13 @@
     <form [formGroup]="form">
       <div class="linha">
         <mat-form-field style="width: 100%; padding-top: 8px" cdkFocusInitial>
-          <mat-label>Nome Fantasia</mat-label>
+          <mat-label>Nome</mat-label>
           <input
             type="text"
             matInput
-            #inputnome_fantasia
-            (focus)="inputnome_fantasia.select()"
-            formControlName="nome_fantasia"
+            #inputnome
+            (focus)="inputnome.select()"
+            formControlName="nome"
             cdkFocusInitial
           />
         </mat-form-field>
@@ -29,16 +29,6 @@
           />
         </mat-form-field>
       </div>
-      <mat-form-field style="width: 100%; padding-top: 8px">
-        <mat-label>Razão Social</mat-label>
-        <input
-          type="text"
-          matInput
-          #inputrazao_social
-          (focus)="inputrazao_social.select()"
-          formControlName="razao_social"
-        />
-      </mat-form-field>
       <div class="linha">
         <mat-form-field style="width: 100%; padding-top: 8px" cdkFocusInitial>
           <mat-label>E-mail</mat-label>

@@ -1,7 +1,6 @@
 export class Cliente {
   uid: string;
-  nome_fantasia: string;
-  razao_social?: string;
+  nome: string;
   cpf_cnpj?: string;
   email?: string;
   telefone?: string;
@@ -13,12 +12,11 @@ export class Cliente {
   cidade?: string;
   estado?: string;
   estado_uf?: string;
-  status?: 'ATIVO' | 'INATIVO';
+  status?: "ATIVO" | "INATIVO";
 
   constructor(t: Cliente) {
     this.uid = t.uid;
-    this.razao_social = t.razao_social;
-    this.nome_fantasia = t.nome_fantasia;
+    this.nome = t.nome;
     this.cpf_cnpj = t.cpf_cnpj;
     this.email = t.email;
     this.telefone = t.telefone;
@@ -30,6 +28,6 @@ export class Cliente {
     this.cidade = t.cidade;
     this.estado = t.estado;
     this.estado_uf = t.estado_uf;
-    this.status = t.status ?? 'ATIVO';
+    this.status = t.status ?? "ATIVO";
   }
 }

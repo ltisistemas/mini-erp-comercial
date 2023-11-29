@@ -3,7 +3,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { FirebaseService } from "src/app/shared/utils/firebase.service";
 import { ClienteDialogComponent } from "../presentation/cliente-dialog.component";
 import cepPromise from "cep-promise";
-import { estados } from "src/app/pages/clientes/domain/entities/estados";
+import { estados } from "src/app/pages/clientes/entities/estados";
 
 @Injectable({ providedIn: "root" })
 export class ClienteDialogControllerService {
@@ -22,8 +22,8 @@ export class ClienteDialogControllerService {
       form.get("estado_uf")?.disable();
 
       if (cliente) {
-        form.get("razao_social")?.setValue(cliente.razao_social);
-        form.get("nome_fantasia")?.setValue(cliente.nome_fantasia);
+        form.get("nome")?.setValue(cliente.nome);
+        // form.get("nome_fantasia")?.setValue(cliente.nome_fantasia);
         form.get("cpf_cnpj")?.setValue(cliente.cpf_cnpj);
         form.get("email")?.setValue(cliente.email);
         form.get("telefone")?.setValue(cliente.telefone);
@@ -63,8 +63,7 @@ export class ClienteDialogControllerService {
       if (!formValido) return;
 
       const request = {
-        nome_fantasia: form.get("nome_fantasia")?.value,
-        razao_social: form.get("razao_social")?.value,
+        nome: form.get("nome")?.value,
         cpf_cnpj: form.get("cpf_cnpj")?.value,
         email: form.get("email")?.value,
         telefone: form.get("telefone")?.value,
@@ -105,10 +104,8 @@ export class ClienteDialogControllerService {
       const formValido = this.validarForm(nome);
       if (!formValido) return;
 
-      const usuario = this.service.getUsuarioLogado();
       const request = {
-        nome_fantasia: form.get("nome_fantasia")?.value,
-        razao_social: form.get("razao_social")?.value,
+        nome: form.get("nome")?.value,
         cpf_cnpj: form.get("cpf_cnpj")?.value,
         email: form.get("email")?.value,
         telefone: form.get("telefone")?.value,
