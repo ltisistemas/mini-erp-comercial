@@ -1,3 +1,8 @@
+<ngx-loading
+  [show]="processando"
+  [config]="{ backdropBorderRadius: '3px' }"
+></ngx-loading>
+
 <h1 mat-dialog-title>Informações dos clientes</h1>
 <div mat-dialog-content>
   <mat-accordion>
@@ -182,42 +187,5 @@
   </table>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Fechar</button>
+  <button mat-button color="warn" (click)="onNoClick()">Fechar</button>
 </div>
-<!-- <div class="lista-entradas">
-  <div class="title">
-    <b>Lista de Clientes</b>
-  </div>
-  <div class="list">
-    <div class="item {{ cliente.status }}" *ngFor="let cliente of clientes">
-      <mat-icon class="visibility" *ngIf="cliente.status === 'ATIVO'">
-        visibility
-      </mat-icon>
-      <mat-icon class="visibility" *ngIf="cliente.status !== 'ATIVO'">
-        visibility_off
-      </mat-icon>
-      <p>{{ cliente.nome_fantasia }} | {{ cliente.cpf_cnpj }}</p>
-      <button
-        mat-icon-button
-        color="primary"
-        style="margin-left: auto"
-        (click)="editar(cliente)"
-      >
-        <mat-icon>edit</mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        style="margin-left: auto"
-        (click)="status(cliente)"
-      >
-        <mat-icon *ngIf="cliente.status === 'ATIVO'">block</mat-icon>
-        <mat-icon *ngIf="cliente.status !== 'ATIVO'">task_alt</mat-icon>
-      </button>
-    </div>
-  </div>
-</div>
-<div class="bottom-button">
-  <button mat-flat-button color="primary" (click)="adicionar()">
-    <mat-icon>add</mat-icon> Adicionar
-  </button>
-</div> -->

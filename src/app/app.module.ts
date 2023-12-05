@@ -23,6 +23,7 @@ import { GenerateJwtService } from "./shared/services/generate-jwt.service";
 import { LocalStorageService } from "./shared/services/localstorage.service";
 import { UsuarioLogadoUsecaseService } from "./shared/use-cases/usuario-logado-usecase.service";
 import { UsuarioLogadoService } from "./shared/services/usuario-logado.service";
+import { UtilsService } from "./shared/utils/utils.service";
 
 registerLocaleData(localePT);
 
@@ -62,6 +63,7 @@ export function tokenGetter() {
     UsuarioLogadoService,
     GenerateJwtService,
     LocalStorageService,
+    UtilsService,
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

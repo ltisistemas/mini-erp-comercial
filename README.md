@@ -17,6 +17,9 @@
   - [x] Funcionalidade
   - [x] Estilização
 - Cadastro de produtos
+  - [x] Layout
+  - [ ] Funcionalidade
+  - [x] Estilização
   - Cadastro de categoria / Subcategoria
 - Cadastro de Fornecedores
 - Cadastro de Entrada de Produtos (Pedido de entrada)

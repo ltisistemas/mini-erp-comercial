@@ -66,6 +66,7 @@ export class ClientesComponent implements OnInit {
   }
 
   private async loadData() {
+    this.processando = true;
     const clientes = await this.listarService.listar();
 
     if (clientes instanceof ClienteNotFound) {
@@ -74,6 +75,7 @@ export class ClientesComponent implements OnInit {
     }
 
     this.clientes = clientes;
+    this.processando = false;
     return this.populateDatasource();
   }
 

@@ -9,6 +9,9 @@ export const environment = {
     empresa: "empresa",
     usuario: "usuario",
     clientes: "clientes",
+    produtos: "produtos",
+    categoria: "categorias",
+    sub_categoria: "sub_categorias",
     fornecedores: "fornecedores",
   },
   firebaseConfig: {

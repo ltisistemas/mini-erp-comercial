@@ -5,6 +5,8 @@ import { UsuarioLogado } from "src/app/shared/entities/usuario-logado";
 import { MatDialog } from "@angular/material/dialog";
 import { ClientesComponent } from "../../clientes/components/clientes.component";
 import { UsuarioLogadoUsecaseService } from "src/app/shared/use-cases/usuario-logado-usecase.service";
+import { ProdutosComponent } from "../../produtos/components/produto/produtos.component";
+import { UtilsService } from "src/app/shared/utils/utils.service";
 
 @Component({
   selector: "app-home",
@@ -19,8 +21,6 @@ export class HomeComponent implements OnInit {
   usuarioLogado: UsuarioLogado;
   title = "LTI PDV";
   tituloAlterado = false;
-
-  sizes = { width: "", height: "" };
 
   menuItens = [
     {
@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private usuarioLogadoService: UsuarioLogadoUsecaseService,
-    private dialog: MatDialog // private layout: Layout
+    private utils: UtilsService
   ) {
     this.usuarioLogado = this.usuarioLogadoService.buscarUsuarioLogado();
 
@@ -83,9 +83,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.controller.init(this);
-
-    this.setSize();
+    this.utils.setSize();
   }
 
   go(route: string, drawer?: any) {
@@ -94,26 +92,15 @@ export class HomeComponent implements OnInit {
   }
 
   abrirModalCliente() {
-    this.abrirModal(ClientesComponent, {});
-  }
-
-  private abrirModal(component: any, data: any) {
-    this.dialog.open(component, {
-      width: this.sizes.width,
-      height: this.sizes.height,
-      disableClose: true,
-      hasBackdrop: true,
-      data,
+    this.utils.abrirModal({
+      component: ClientesComponent,
+      data: {},
     });
   }
-
-  private setSize() {
-    const win = {
-      height: window.innerHeight * 0.9,
-      width: window.innerWidth * 0.9,
-    };
-
-    this.sizes.height = `${win.height}px`;
-    this.sizes.width = `${win.width}px`;
+  abrirModalProdutos() {
+    this.utils.abrirModal({
+      component: ProdutosComponent,
+      data: {},
+    });
   }
 }
