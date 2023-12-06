@@ -34,6 +34,7 @@ import {
 } from "@angular/material/paginator";
 import { PtBrMatPaginatorIntl } from "./pt-br-mat-paginator-intl";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import { MatRippleModule } from "@angular/material/core";
 
 @NgModule({
   exports: [
@@ -64,6 +65,7 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
     MatTableModule,
     MatPaginatorModule,
     MatButtonToggleModule,
+    MatRippleModule,
   ],
   providers: [
     {

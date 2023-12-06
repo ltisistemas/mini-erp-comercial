@@ -79,11 +79,18 @@
               (focus)="inputcategoria_id.select()"
               formControlName="categoria_id"
               [disabled]="true"
+              style="user-select: none"
+              (keyup.f2)="categoriaF2()"
             />
           </mat-form-field>
           <mat-form-field style="width: 100%; padding-top: 8px">
             <mat-label>Sub-Categoria</mat-label>
-            <button matPrefix mat-icon-button color="primary">
+            <button
+              matPrefix
+              mat-icon-button
+              color="primary"
+              (click)="subCategoriaF2()"
+            >
               <mat-icon>search</mat-icon>
             </button>
             <input
@@ -93,6 +100,7 @@
               (focus)="inputsub_categoria_id.select()"
               formControlName="sub_categoria_id"
               [disabled]="true"
+              (keyup.f2)="subCategoriaF2()"
             />
           </mat-form-field>
         </div>

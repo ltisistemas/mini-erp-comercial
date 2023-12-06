@@ -10,6 +10,7 @@ import { UsuarioLogadoUsecaseService } from "src/app/shared/use-cases/usuario-lo
 import { Categoria } from "../../entities/categoria";
 import { UtilsService } from "src/app/shared/utils/utils.service";
 import { CategoriasComponent } from "../categorias/categorias.component";
+import { SubCategoriaComponent } from "../sub-categoria/sub-categoria.component";
 
 @Component({
   selector: "app-produtos",
@@ -21,7 +22,7 @@ export class ProdutosComponent implements OnInit {
   datasource = new MatTableDataSource<Produto>();
   displayedColumns = ["nome", "codigo_barras"];
 
-  categorias: Categoria[] = [];
+  categoria?: Categoria;
 
   processando = false;
   panelOpenState = false;
@@ -42,7 +43,7 @@ export class ProdutosComponent implements OnInit {
       qr_code: ["", []],
       ncm: ["", []],
       descricao: ["", []],
-      categoria_id: ["", []],
+      categoria_id: { value: "", disabled: true },
       sub_categoria_id: ["", []],
     });
   }
@@ -66,12 +67,20 @@ export class ProdutosComponent implements OnInit {
   onNoClick = () => this.dialogRef.close();
 
   categoriaF2() {
-    const dialog = this.utils.abrirModal({
-      component: CategoriasComponent,
-      data: {},
-      width: 0.8,
-      height: 0.8,
+    const dialog = this.utils.abrirF2(CategoriasComponent, {});
+
+    dialog.afterClosed().subscribe({
+      next: (result) => {
+        if (result.response) {
+          this.categoria = result.data;
+          this.form.get("categoria_id")?.setValue(this.categoria?.descricao);
+        }
+      },
     });
+  }
+
+  subCategoriaF2() {
+    const dialog = this.utils.abrirF2(SubCategoriaComponent, {});
 
     dialog.afterClosed().subscribe({
       next: (result) => {

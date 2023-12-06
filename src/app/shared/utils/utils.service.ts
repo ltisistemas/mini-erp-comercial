@@ -20,29 +20,42 @@ export class UtilsService {
     this._sizes.innerHeight = win.height;
   }
 
+  abrirF2(component: any, selected?: any) {
+    return this.abrirModal({
+      component,
+      data: selected ?? {},
+      width: 0.55,
+      height: 0.9,
+    });
+  }
+
   abrirModal(options: {
     component: any;
     data: any;
     width?: number;
     height?: number;
+    disableClose?: boolean;
+    hasBackdrop?: boolean;
   }) {
-    const w = options.width
+    const width = options.width
       ? String(this._sizes.innerWidth * options.width).concat("px")
       : this._sizes.width;
 
-    const h = options.height
+    const height = options.height
       ? String(this._sizes.innerHeight * options.height).concat("px")
       : this._sizes.height;
 
     return this.dialog.open(options.component, {
-      width: w,
-      minWidth: w,
-      maxWidth: w,
-      height: h,
-      minHeight: h,
-      maxHeight: h,
-      disableClose: true,
-      hasBackdrop: true,
+      width: width,
+      minWidth: width,
+      maxWidth: width,
+
+      height: height,
+      minHeight: height,
+      maxHeight: height,
+
+      disableClose: options.disableClose ?? true,
+      hasBackdrop: options.hasBackdrop ?? true,
       data: options.data,
     });
   }
