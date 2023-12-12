@@ -7,7 +7,9 @@
 <p>🚀 Pequeno sistema de automação de lojas, focado em lojas de bairros, com um pratico e simples PDV e cadastro de produtos.</p>
 
 <div>
+
 ![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial)
+
 ![GitHub License](https://img.shields.io/github/license/ltisistemas/mini-erp-comercial)
 
 </div>
