@@ -4,7 +4,12 @@
   </a>
 </p>
 <h1 align="center">MINI ERP COMERCIAL</h1>
-<p>Pequeno sistema de automação de lojas, focado em lojas de bairros, com um pratico e simples PDV e cadastro de produtos.</p>
+<p>🚀 Pequeno sistema de automação de lojas, focado em lojas de bairros, com um pratico e simples PDV e cadastro de produtos.</p>
+
+<div>
+![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial)
+
+</div>
 
 ##### Itens do sistema
 
