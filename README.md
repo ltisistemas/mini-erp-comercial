@@ -8,7 +8,7 @@
 
 <div>
 
-![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial)![GitHub License](https://img.shields.io/github/license/ltisistemas/mini-erp-comercial)![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/ltisistemas/mini-erp-comercial/main)![GitHub language count](https://img.shields.io/github/languages/count/ltisistemas/mini-erp-comercial)![GitHub top language](https://img.shields.io/github/languages/top/ltisistemas/mini-erp-comercial)
+![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial) ![GitHub License](https://img.shields.io/github/license/ltisistemas/mini-erp-comercial) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/ltisistemas/mini-erp-comercial/main) ![GitHub language count](https://img.shields.io/github/languages/count/ltisistemas/mini-erp-comercial) ![GitHub top language](https://img.shields.io/github/languages/top/ltisistemas/mini-erp-comercial)
 
 </div>
 
