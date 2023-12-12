@@ -8,6 +8,7 @@
 
 <div>
 ![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial)
+![GitHub License](https://img.shields.io/github/license/ltisistemas/mini-erp-comercial)
 
 </div>
 
