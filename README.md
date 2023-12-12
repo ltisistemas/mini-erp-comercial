@@ -6,7 +6,7 @@
 <h1 align="center">MINI ERP COMERCIAL</h1>
 <p>🚀 Pequeno sistema de automação de lojas, focado em lojas de bairros, com um pratico e simples PDV e cadastro de produtos.</p>
 
-<div>
+<div align="center">
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial) ![GitHub License](https://img.shields.io/github/license/ltisistemas/mini-erp-comercial) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/ltisistemas/mini-erp-comercial/main) ![GitHub language count](https://img.shields.io/github/languages/count/ltisistemas/mini-erp-comercial) ![GitHub top language](https://img.shields.io/github/languages/top/ltisistemas/mini-erp-comercial)
 
