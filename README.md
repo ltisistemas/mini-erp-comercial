@@ -4,6 +4,7 @@
   </a>
 </p>
 <h1 align="center">MINI ERP COMERCIAL</h1>
+<p>Pequeno sistema de automação de lojas, focado em lojas de bairros, com um pratico e simples PDV e cadastro de produtos.</p>
 
 ##### Itens do sistema
 
