@@ -20,7 +20,14 @@
   - [x] Layout
   - [ ] Funcionalidade
   - [x] Estilização
-  - Cadastro de categoria / Subcategoria
+  - Cadastro de categoria
+    - [x] Layout
+    - [x] Funcionalidade
+    - [x] Estilização
+  - Cadastro de Subcategoria
+    - [x] Layout
+    - [x] Funcionalidade
+    - [x] Estilização
 - Cadastro de Fornecedores
 - Cadastro de Entrada de Produtos (Pedido de entrada)
 - PDV

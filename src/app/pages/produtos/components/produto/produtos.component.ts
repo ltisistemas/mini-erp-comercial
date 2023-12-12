@@ -11,6 +11,7 @@ import { Categoria } from "../../entities/categoria";
 import { UtilsService } from "src/app/shared/utils/utils.service";
 import { CategoriasComponent } from "../categorias/categorias.component";
 import { SubCategoriaComponent } from "../sub-categoria/sub-categoria.component";
+import { SubCategoria } from "../../entities/sub-categoria";
 
 @Component({
   selector: "app-produtos",
@@ -23,6 +24,7 @@ export class ProdutosComponent implements OnInit {
   displayedColumns = ["nome", "codigo_barras"];
 
   categoria?: Categoria;
+  subCategoria?: SubCategoria;
 
   processando = false;
   panelOpenState = false;
@@ -68,10 +70,14 @@ export class ProdutosComponent implements OnInit {
 
   categoriaF2() {
     const dialog = this.utils.abrirF2(CategoriasComponent, {});
-
     dialog.afterClosed().subscribe({
       next: (result) => {
         if (result.response) {
+          if (this.categoria && result.data.uid !== this.categoria.uid) {
+            this.subCategoria = undefined;
+            this.form.get("sub_categoria_id")?.setValue("");
+          }
+
           this.categoria = result.data;
           this.form.get("categoria_id")?.setValue(this.categoria?.descricao);
         }
@@ -80,13 +86,37 @@ export class ProdutosComponent implements OnInit {
   }
 
   subCategoriaF2() {
-    const dialog = this.utils.abrirF2(SubCategoriaComponent, {});
+    if (!this.categoria) {
+      const message = "Selecione uma categoria primeiro";
+      this.snack.open(message, "", { duration: 2500 });
+      return;
+    }
+
+    const dialog = this.utils.abrirF2(SubCategoriaComponent, {
+      categoria_id: this.categoria.uid,
+    });
 
     dialog.afterClosed().subscribe({
       next: (result) => {
         if (result.response) {
+          this.subCategoria = result.data;
+          this.form
+            .get("sub_categoria_id")
+            ?.setValue(this.subCategoria?.descricao);
         }
       },
     });
+  }
+  limparCategoria(inputcategoria_id: any) {
+    this.categoria = undefined;
+    this.form.get("categoria_id")?.setValue("");
+
+    inputcategoria_id.focus();
+  }
+  limparSubCategoria(inputsub_categoria_id: any) {
+    this.subCategoria = undefined;
+    this.form.get("sub_categoria_id")?.setValue("");
+
+    inputsub_categoria_id.focus();
   }
 }

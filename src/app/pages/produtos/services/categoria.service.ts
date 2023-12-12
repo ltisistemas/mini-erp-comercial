@@ -48,4 +48,18 @@ export class CategoriaService {
       return new CategoriaError("Houve um erro ao tentar salvar");
     }
   }
+
+  async editar(categoria: Categoria): Promise<boolean | CategoriaError> {
+    try {
+      await this.api.updateDOcument(
+        environment.tabelas.categoria,
+        categoria.uid,
+        { descricao: categoria.descricao }
+      );
+
+      return true;
+    } catch (err) {
+      return new CategoriaError("Houve um erro ao tentar salvar");
+    }
+  }
 }

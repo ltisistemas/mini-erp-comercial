@@ -9,6 +9,11 @@ import { ListarCategoriasService } from "./use-cases/listar-categorias.service";
 import { CategoriaService } from "./services/categoria.service";
 import { IncluirCategoriaService } from "./use-cases/incluir-categoria.service";
 import { SubCategoriaComponent } from "./components/sub-categoria/sub-categoria.component";
+import { EditarCategoriaService } from "./use-cases/editar-categoria.service";
+import { SubCategoriasService } from "./services/sub-categorias.service";
+import { ListarSubCategoriasService } from "./use-cases/listar-sub-categorias.service ";
+import { IncluirSubCategoriaService } from "./use-cases/incluir-sub-categoria.service";
+import { EditarSubCategoriaService } from "./use-cases/editar-sub-categoria.service";
 
 @NgModule({
   imports: [CommonModule, SharedModule],
@@ -19,6 +24,11 @@ import { SubCategoriaComponent } from "./components/sub-categoria/sub-categoria.
     ListarCategoriasService,
     CategoriaService,
     IncluirCategoriaService,
+    EditarCategoriaService,
+    SubCategoriasService,
+    ListarSubCategoriasService,
+    IncluirSubCategoriaService,
+    EditarSubCategoriaService,
   ],
 })
 export class ProdutosModule {}

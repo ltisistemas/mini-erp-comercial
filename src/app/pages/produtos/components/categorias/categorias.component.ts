@@ -9,6 +9,7 @@ import { CategoriaError } from "../../error/categoria-error";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { UsuarioLogadoUsecaseService } from "src/app/shared/use-cases/usuario-logado-usecase.service";
 import { SelectionModel } from "@angular/cdk/collections";
+import { EditarCategoriaService } from "../../use-cases/editar-categoria.service";
 
 @Component({
   selector: "app-categorias",
@@ -30,6 +31,7 @@ export class CategoriasComponent implements OnInit {
     public dialogRef: MatDialogRef<CategoriasComponent>,
     private listarCategorias: ListarCategoriasService,
     private incluirCategoria: IncluirCategoriaService,
+    private editarCategoria: EditarCategoriaService,
     private usuarioService: UsuarioLogadoUsecaseService,
     private snack: MatSnackBar,
     private fb: FormBuilder
@@ -66,20 +68,25 @@ export class CategoriasComponent implements OnInit {
     inputdescricao.focus();
   };
 
-  selectRow(row: Categoria) {
+  selectRow(row: Categoria, inputdescricao: any) {
     this.selection.toggle(row);
     this.categoria = this.selection.selected.length
       ? this.selection.selected[0]
       : undefined;
 
-    // if (!this.categoria) {
-    //   this.categoria = this.selection.selected.;
-    // }
+    const descricao = this.categoria ? this.categoria.descricao : "";
 
-    console.log("> [INFO]", this.selection.selected);
+    this.form.get("descricao")?.setValue(descricao);
+    inputdescricao.focus();
   }
 
   async onHanddle() {
+    if (!this.categoria) return this.incluir();
+
+    return this.editar();
+  }
+
+  private async incluir() {
     if (this.processando) return;
     this.processando = true;
     const usuario = this.usuarioService.buscarUsuarioLogado();
@@ -97,7 +104,25 @@ export class CategoriasComponent implements OnInit {
       return;
     }
 
-    const message = "Categoria cadastrada com sucesso!";
+    const message = "Categoria salva com sucesso!";
+    this.snack.open(message, "", { duration: 2500 });
+    this.panelOpenState = false;
+    this.loadData();
+  }
+
+  private async editar() {
+    if (this.processando) return;
+    this.processando = true;
+
+    this.categoria!.descricao = this.form.get("descricao")?.value;
+    const response = await this.editarCategoria.editar(this.categoria!);
+
+    if (response instanceof CategoriaError) {
+      this.snack.open(response.message, "", { duration: 2500 });
+      return;
+    }
+
+    const message = "Categoria salva com sucesso!";
     this.snack.open(message, "", { duration: 2500 });
     this.panelOpenState = false;
     this.loadData();
