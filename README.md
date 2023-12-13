@@ -87,10 +87,18 @@
 
 ### Pré-requisitos
 
-<p>Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). Como gosto de usar o Yarn pois acho ele mais rapido e pratico, basta baixa-lo através desse endereço: [Yarn](https://yarnpkg.com/).</p>
+<p>
 
-<p>Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)</p>
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). Como gosto de usar o Yarn pois acho ele mais rapido e pratico, basta baixa-lo através desse endereço: [Yarn](https://yarnpkg.com/).
+
+</p>
+
+<p>
+
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+</p>
 
 ### 🎲 Rodando a Aplicação
 
