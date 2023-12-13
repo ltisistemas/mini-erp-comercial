@@ -8,7 +8,7 @@
 
 <div align="center">
 
-![Badge](https://img.shields.io/badge/LtiPDV-V1.0-%237159c1?style=for-the-badge&logo=ghost) ![Badge](https://img.shields.io/badge/Angular-V16-%237159c1?style=for-the-badge&logo=angular)![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial) ![GitHub License](https://img.shields.io/github/license/ltisistemas/mini-erp-comercial) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/ltisistemas/mini-erp-comercial/main) ![GitHub language count](https://img.shields.io/github/languages/count/ltisistemas/mini-erp-comercial) ![GitHub top language](https://img.shields.io/github/languages/top/ltisistemas/mini-erp-comercial)
+![Badge](https://img.shields.io/badge/LtiPDV-V1.0-%237159c1?style=for-the-badge&logo=ghost) ![Badge](https://img.shields.io/badge/Angular-V16-%237159c1?style=for-the-badge&logo=angular) ![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial) ![GitHub License](https://img.shields.io/github/license/ltisistemas/mini-erp-comercial) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/ltisistemas/mini-erp-comercial/main) ![GitHub language count](https://img.shields.io/github/languages/count/ltisistemas/mini-erp-comercial) ![GitHub top language](https://img.shields.io/github/languages/top/ltisistemas/mini-erp-comercial)
 
 </div>
 
@@ -32,6 +32,18 @@
 <h4 align="center"> 
 	🚧  LTI PDV (Mini ERP Comercial) 🚀 Em construção...  🚧
 </h4>
+
+![Details web](screenshots/tela_login_lti_pdv.png)
+
+### Features
+
+- [x] Cadastro de usuário
+- [x] Cadastro de cliente
+- [x] Cadastro de produtos
+- [x] Cadastro de fornecedor
+- [x] Pedidos de compras
+- [x] Pedidos frente de loja (PDV)
+- [x] Resumo do negocio
 
 ##### Itens do sistema
 
