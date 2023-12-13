@@ -3,14 +3,35 @@
     <img src="src/assets/img/logomarca.png" height="150" width="175" alt="Unform" />
   </a>
 </p>
-<h1 align="center">MINI ERP COMERCIAL</h1>
+<h1 align="center">LTI PDV (Mini ERP Comercial)</h1>
 <p>🚀 Pequeno sistema de automação de lojas, focado em lojas de bairros, com um pratico e simples PDV e cadastro de produtos.</p>
 
 <div align="center">
 
-![Badge](https://img.shields.io/badge/LtiPDV-V1.0-%237159c1?style=for-the-badge&logo=ghost)![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial) ![GitHub License](https://img.shields.io/github/license/ltisistemas/mini-erp-comercial) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/ltisistemas/mini-erp-comercial/main) ![GitHub language count](https://img.shields.io/github/languages/count/ltisistemas/mini-erp-comercial) ![GitHub top language](https://img.shields.io/github/languages/top/ltisistemas/mini-erp-comercial) ![Badge](https://img.shields.io/badge/Angular-V16-%237159c1?style=for-the-badge&logo=angular)
+![Badge](https://img.shields.io/badge/LtiPDV-V1.0-%237159c1?style=for-the-badge&logo=ghost)! ![Badge](https://img.shields.io/badge/Angular-V16-%237159c1?style=for-the-badge&logo=angular)[GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial) ![GitHub License](https://img.shields.io/github/license/ltisistemas/mini-erp-comercial) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/ltisistemas/mini-erp-comercial/main) ![GitHub language count](https://img.shields.io/github/languages/count/ltisistemas/mini-erp-comercial) ![GitHub top language](https://img.shields.io/github/languages/top/ltisistemas/mini-erp-comercial)
 
 </div>
+
+# Tabela de conteúdos
+
+<!--ts-->
+
+- [Sobre](#Sobre)
+- [Tabela de Conteudo](#tabela-de-conteudo)
+- [Instalação](#instalacao)
+- [Como usar](#como-usar)
+  - [Pre Requisitos](#pre-requisitos)
+  - [Local files](#local-files)
+  - [Remote files](#remote-files)
+  - [Multiple files](#multiple-files)
+  - [Combo](#combo)
+- [Tests](#testes)
+- [Tecnologias](#tecnologias)
+<!--te-->
+
+<h4 align="center"> 
+	🚧  LTI PDV (Mini ERP Comercial) 🚀 Em construção...  🚧
+</h4>
 
 ##### Itens do sistema
 
