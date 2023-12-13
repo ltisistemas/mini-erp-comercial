@@ -33,11 +33,11 @@
 	🚧  LTI PDV (Mini ERP Comercial) 🚀 Em construção...  🚧
 </h4>
 
-<div align="center">
+<div align="center" style="display: flex; align-items: flex-start; justify-content: center;">
 
-![LTI PDV - Tela de Login](screenshots/tela_login_lti_pdv.png)
+<img alt="LTI PDV - Tela de Login" title="#LTI PDV - Tela de Login" src="screenshots/tela_login_lti_pdv.png" width="400px">
 
-![LTI PDV - Tela Principal](screenshots/tela_principal_lti_pdv.png)
+<img alt="LTI PDV - Tela Principal" title="#LTI PDV - Tela Principal" src="screenshots/tela_principal_lti_pdv.png" width="400px">
 
 </div>
 
