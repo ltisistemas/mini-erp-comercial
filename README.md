@@ -35,6 +35,8 @@
 
 ![Details web](screenshots/tela_login_lti_pdv.png)
 
+![Details web](screenshots/tela_principal_lti_pdv.png)
+
 ### Features
 
 - [x] Cadastro de usuário
