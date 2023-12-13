@@ -33,9 +33,13 @@
 	🚧  LTI PDV (Mini ERP Comercial) 🚀 Em construção...  🚧
 </h4>
 
-![Details web](screenshots/tela_login_lti_pdv.png)
+<div align="center">
 
-![Details web](screenshots/tela_principal_lti_pdv.png)
+![LTI PDV - Tela de Login](screenshots/tela_login_lti_pdv.png)
+
+![LTI PDV - Tela Principal](screenshots/tela_principal_lti_pdv.png)
+
+</div>
 
 ### Features
 
@@ -46,6 +50,55 @@
 - [x] Pedidos de compras
 - [x] Pedidos frente de loja (PDV)
 - [x] Resumo do negocio
+
+### Pré-requisitos
+
+<p>Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). Como gosto de usar o Yarn pois acho ele mais rapido e pratico, basta baixa-lo através desse endereço: [Yarn](https://yarnpkg.com/).</p>
+
+<p>Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)</p>
+
+### 🎲 Rodando a Aplicação
+
+```bash
+# Clone este repositório
+$ git clone <https://github.com/ltisistemas/mini-erp-comercial>
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd mini-erp-comercial
+
+# Instale as dependências
+$ npm install / yarn
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm start / yarn start
+
+# O servidor inciará na porta:4200 - acesse <http://localhost:4200>
+```
+
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Node.js](https://nodejs.org/en/)
+- [Angular versão 16](https://angular.io/)
+- [Angular Material](https://material.angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Firebase](https://firebase.google.com/?hl=pt-br)
+
+### Autor
+
+---
+
+<a href="https://w.app/LTISistemas">
+ <img style="border-radius: 50%;" src="screenshots/avatar_felipe.jpeg" width="100px;" alt=""/>
+ <br />
+ <sub><b>Luiz Felipe</b></sub></a> <a href="https://w.app/LTISistemas" title="LTI Sistemas">🚀</a>
+
+Feito com ❤️ por Thiago Marinho 👋🏽 Entre em contato!
+
+[![Twitter Badge](https://img.shields.io/badge/-@tgmarinho-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/tgmarinho)](https://twitter.com/tgmarinho) [![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/tgmarinho/)
+[![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:tgmarinho@gmail.com)
 
 ##### Itens do sistema
 
