@@ -97,16 +97,24 @@
 ```bash
 # Clone este repositório
 $ git clone <https://github.com/ltisistemas/mini-erp-comercial>
+```
 
+```bash
 # Acesse a pasta do projeto no terminal/cmd
 $ cd mini-erp-comercial
+```
 
+```bash
 # Instale as dependências
 $ npm install / yarn
+```
 
+```bash
 # Execute a aplicação em modo de desenvolvimento
 $ npm start / yarn start
+```
 
+```bash
 # O servidor inciará na porta:4200 - acesse <http://localhost:4200>
 ```
 
