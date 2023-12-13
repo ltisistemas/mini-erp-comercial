@@ -43,13 +43,47 @@
 
 ### Features
 
-- [x] Cadastro de usuário
-- [x] Cadastro de cliente
-- [x] Cadastro de produtos
-- [x] Cadastro de fornecedor
-- [x] Pedidos de compras
-- [x] Pedidos frente de loja (PDV)
-- [x] Resumo do negocio
+- Tela de Login
+  - [x] Layout
+  - [x] Funcionalidade
+  - [x] Estilização
+- Cadastro interno de estado
+  - [x] Realizado
+- Cadastro interno de cidades
+  - [x] Realizado
+- Cadastro de empresa
+  - Cadastro de usuário
+- Cadastro de cliente
+  - [x] Layout
+  - [x] Funcionalidade
+  - [x] Estilização
+- Cadastro de produtos
+  - [x] Layout
+  - [ ] Funcionalidade
+  - [x] Estilização
+  - Cadastro de categoria
+    - [x] Layout
+    - [x] Funcionalidade
+    - [x] Estilização
+  - Cadastro de Subcategoria
+    - [x] Layout
+    - [x] Funcionalidade
+    - [x] Estilização
+- Cadastro de Fornecedores
+- Cadastro de Entrada de Produtos (Pedido de entrada)
+- PDV
+- Pedido de vendas (Vendas B2B)
+
+##### Relatorios
+
+- Lista de clientes da empresa
+- Lista de Produtos
+- Lista de Fornecedores
+
+- Vendas do dia
+- Vendas do dia p/ Cliente
+- Fechamento de caixa
+- Abertura de caixa
 
 ### Pré-requisitos
 
@@ -99,47 +133,3 @@ Feito com ❤️ por Luiz Felipe 👋🏽 Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/-Felipe-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/luiz-felipe-marinho-dantas-bb37674b/)](https://www.linkedin.com/in/luiz-felipe-marinho-dantas-bb37674b/)
 [![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:luizltisistemas@gmail.com)
-
-##### TODO!
-
-- Tela de Login
-  - [x] Layout
-  - [x] Funcionalidade
-  - [x] Estilização
-- Cadastro interno de estado
-  - [x] Realizado
-- Cadastro interno de cidades
-  - [x] Realizado
-- Cadastro de empresa
-  - Cadastro de usuário
-- Cadastro de cliente
-  - [x] Layout
-  - [x] Funcionalidade
-  - [x] Estilização
-- Cadastro de produtos
-  - [x] Layout
-  - [ ] Funcionalidade
-  - [x] Estilização
-  - Cadastro de categoria
-    - [x] Layout
-    - [x] Funcionalidade
-    - [x] Estilização
-  - Cadastro de Subcategoria
-    - [x] Layout
-    - [x] Funcionalidade
-    - [x] Estilização
-- Cadastro de Fornecedores
-- Cadastro de Entrada de Produtos (Pedido de entrada)
-- PDV
-- Pedido de vendas (Vendas B2B)
-
-##### Relatorios
-
-- Lista de clientes da empresa
-- Lista de Produtos
-- Lista de Fornecedores
-
-- Vendas do dia
-- Vendas do dia p/ Cliente
-- Fechamento de caixa
-- Abertura de caixa
