@@ -132,4 +132,4 @@ As seguintes ferramentas foram usadas na construção do projeto:
 Feito com ❤️ por Luiz Felipe 👋🏽 Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/-Felipe-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/luiz-felipe-marinho-dantas-bb37674b/)](https://www.linkedin.com/in/luiz-felipe-marinho-dantas-bb37674b/)
-[![Gmail Badge](https://img.shields.io/badge/-luizltisistemas@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:luizltisistemas@gmail.com)](mailto:luizltisistemas@gmail.com) [![Badge](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/o.luizfelipemd/)
+[![Gmail Badge](https://img.shields.io/badge/-luizltisistemas@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:luizltisistemas@gmail.com)](mailto:luizltisistemas@gmail.com) [![Badge](https://img.shields.io/badge/o.luizfelipemd-E4405F?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/o.luizfelipemd/)
