@@ -24,6 +24,11 @@ import { LocalStorageService } from "./shared/services/localstorage.service";
 import { UsuarioLogadoUsecaseService } from "./shared/use-cases/usuario-logado-usecase.service";
 import { UsuarioLogadoService } from "./shared/services/usuario-logado.service";
 import { UtilsService } from "./shared/utils/utils.service";
+import { LoadingBarHttpClientModule } from "@ngx-loading-bar/http-client";
+import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
+import { LoadingBarModule } from "@ngx-loading-bar/core";
+import { LtiLoadingService } from "./shared/services/lti-loading.service";
+import { LtiLoadingComponent } from "./shared/components/lti-loading/lti-loading.component";
 
 registerLocaleData(localePT);
 
@@ -32,7 +37,7 @@ export function tokenGetter() {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LtiLoadingComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -52,6 +57,15 @@ export function tokenGetter() {
       // or after 30 seconds (whichever comes first).
       registrationStrategy: "registerWhenStable:30000",
     }),
+
+    // for HttpClient use:
+    LoadingBarHttpClientModule,
+
+    // for Router use:
+    LoadingBarRouterModule,
+
+    // for Core use:
+    LoadingBarModule,
   ],
   providers: [
     FirebaseService,
@@ -64,6 +78,7 @@ export function tokenGetter() {
     GenerateJwtService,
     LocalStorageService,
     UtilsService,
+    LtiLoadingService,
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

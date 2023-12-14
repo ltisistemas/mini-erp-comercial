@@ -5,6 +5,7 @@ import { EfetuarLoginService } from "../use-cases/efetuar-login.service";
 import { LocalStorageService } from "src/app/shared/services/localstorage.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
+import { LtiLoadingService } from "src/app/shared/services/lti-loading.service";
 
 @Component({
   selector: "app-login",
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
     private usecase: EfetuarLoginService,
     private local: LocalStorageService,
     private snack: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private loadingService: LtiLoadingService
   ) {
     this.credentials = this.fb.group({
       email: ["", [Validators.required, Validators.email]],
@@ -37,23 +39,27 @@ export class LoginComponent implements OnInit {
   async login() {
     let message = "";
     try {
-      this.processando = true;
+      this.loadingService.$show.next(true);
+      // this.processando = true;
       const { email, password } = this.credentials.value;
 
       const response = await this.usecase.efetuarLogin(email, password);
       message = response.message;
 
       if (response.statusCode !== 200) {
-        this.processando = false;
+        // this.processando = false;
+        this.loadingService.$show.next(false);
         this.snack.open(message, "Dispensar", { duration: 3500 });
         return;
       }
 
-      this.processando = false;
+      // this.processando = false;
+      this.loadingService.$show.next(false);
       this.snack.open(response.message, "Dispensar", { duration: 3500 });
       this.router.navigateByUrl("");
     } catch (error) {
-      this.processando = false;
+      // this.processando = false;
+      this.loadingService.$show.next(false);
       this.snack.open(message, "Dispensar", { duration: 3500 });
       return;
     }

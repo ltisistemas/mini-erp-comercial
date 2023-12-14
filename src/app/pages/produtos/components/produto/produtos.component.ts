@@ -12,6 +12,7 @@ import { UtilsService } from "src/app/shared/utils/utils.service";
 import { CategoriasComponent } from "../categorias/categorias.component";
 import { SubCategoriaComponent } from "../sub-categoria/sub-categoria.component";
 import { SubCategoria } from "../../entities/sub-categoria";
+import { LtiLoadingService } from "src/app/shared/services/lti-loading.service";
 
 @Component({
   selector: "app-produtos",
@@ -37,7 +38,8 @@ export class ProdutosComponent implements OnInit {
     private getUsuario: UsuarioLogadoUsecaseService,
     private fb: FormBuilder,
     private snack: MatSnackBar,
-    private utils: UtilsService
+    private utils: UtilsService,
+    private loadingService: LtiLoadingService
   ) {
     this.form = this.fb.group({
       nome: ["", [Validators.required]],
@@ -56,9 +58,9 @@ export class ProdutosComponent implements OnInit {
     this.loadData();
   }
   private async loadData() {
-    this.processando = true;
+    this.loadingService.$show.next(true);
     this.produtos = await this.listarService.listar();
-    this.processando = false;
+    this.loadingService.$show.next(false);
     return this.populateDatasource();
   }
 

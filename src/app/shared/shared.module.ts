@@ -11,6 +11,7 @@ import {
   provideNgxMask,
 } from "ngx-mask";
 import { ClipboardModule } from "ngx-clipboard";
+import { LtiLoadingComponent } from "./components/lti-loading/lti-loading.component";
 
 const maskConfig: Partial<IConfig> = {
   validation: false,

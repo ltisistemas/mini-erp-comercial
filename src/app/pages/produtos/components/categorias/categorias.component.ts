@@ -10,6 +10,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { UsuarioLogadoUsecaseService } from "src/app/shared/use-cases/usuario-logado-usecase.service";
 import { SelectionModel } from "@angular/cdk/collections";
 import { EditarCategoriaService } from "../../use-cases/editar-categoria.service";
+import { LtiLoadingService } from "src/app/shared/services/lti-loading.service";
 
 @Component({
   selector: "app-categorias",
@@ -34,7 +35,8 @@ export class CategoriasComponent implements OnInit {
     private editarCategoria: EditarCategoriaService,
     private usuarioService: UsuarioLogadoUsecaseService,
     private snack: MatSnackBar,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private loadingService: LtiLoadingService
   ) {}
 
   ngOnInit() {
@@ -42,9 +44,9 @@ export class CategoriasComponent implements OnInit {
   }
 
   private async loadData() {
-    this.processando = true;
+    this.loadingService.$show.next(true);
     this.categorias = await this.listarCategorias.listar();
-    this.processando = false;
+    this.loadingService.$show.next(false);
 
     return this.populateDatasource();
   }
@@ -89,8 +91,9 @@ export class CategoriasComponent implements OnInit {
   private async incluir() {
     if (this.processando) return;
     this.processando = true;
-    const usuario = this.usuarioService.buscarUsuarioLogado();
+    this.loadingService.$show.next(true);
 
+    const usuario = this.usuarioService.buscarUsuarioLogado();
     const categoria: Categoria = {
       uid: "",
       empresa_id: usuario.empresa_id,
@@ -113,6 +116,7 @@ export class CategoriasComponent implements OnInit {
   private async editar() {
     if (this.processando) return;
     this.processando = true;
+    this.loadingService.$show.next(true);
 
     this.categoria!.descricao = this.form.get("descricao")?.value;
     const response = await this.editarCategoria.editar(this.categoria!);
