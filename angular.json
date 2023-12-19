@@ -39,6 +39,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "crypto-js",
+              "moment",
+              "cep-promise",
+              "bcryptjs"
+            ],
             "outputPath": "dist/lti-mini-erp-comercial",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -78,7 +84,13 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "allowedCommonJsDependencies": [
+                "crypto-js",
+                "moment",
+                "cep-promise",
+                "bcryptjs"
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -86,7 +98,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "allowedCommonJsDependencies": [
+                "crypto-js",
+                "moment",
+                "cep-promise",
+                "bcryptjs"
+              ]
             }
           },
           "defaultConfiguration": "development"

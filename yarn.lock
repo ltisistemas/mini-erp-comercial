@@ -6277,13 +6277,6 @@ ngx-dropzone@^3.1.0:
   dependencies:
     tslib "^2.0.0"
 
-ngx-loading@^15.0.0:
-  version "15.0.0"
-  resolved "https://registry.yarnpkg.com/ngx-loading/-/ngx-loading-15.0.0.tgz#f747878831b5ceb865fbb83a3bd676a889ecb1c7"
-  integrity sha512-8/+3+ILdOCfnxc/WV0lwKTpThoM4mekI2coO1MkEI+Bc7iW8x3X82ruYPG7fbHBibIo36YrOXzM3DPHJptimZw==
-  dependencies:
-    tslib "^2.3.0"
-
 ngx-mask@^16.2.9:
   version "16.2.9"
   resolved "https://registry.yarnpkg.com/ngx-mask/-/ngx-mask-16.2.9.tgz#afbec45e3fb14e3a992406c1284a4022c476d672"

@@ -1,6 +1,8 @@
 export const environment = {
   production: true,
   appVersion: require("../../package.json").version + "-prod",
+  host_page: "http://localhost:4200",
+  jwt_key: "8c74ec9e099c920eba5ba30465e76d214d565b26",
   storage: {
     token: "lti-mini-erp-comercial-accessToken",
     usuario: "lti-mini-erp-comercial-usuario",

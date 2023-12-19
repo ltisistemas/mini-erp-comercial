@@ -2,7 +2,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MaterialModule } from "./utils/material.module";
 import { NgxDropzoneModule } from "ngx-dropzone";
-import { NgxLoadingModule } from "ngx-loading";
 import {
   IConfig,
   NgxMaskDirective,
@@ -11,7 +10,9 @@ import {
   provideNgxMask,
 } from "ngx-mask";
 import { ClipboardModule } from "ngx-clipboard";
-import { LtiLoadingComponent } from "./components/lti-loading/lti-loading.component";
+import { LoadingBarModule } from "@ngx-loading-bar/core";
+import { LoadingBarHttpClientModule } from "@ngx-loading-bar/http-client";
+import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -21,7 +22,7 @@ const maskConfig: Partial<IConfig> = {
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    NgxLoadingModule.forRoot({}),
+    // NgxLoadingModule.forRoot({}),
     NgxDropzoneModule,
     NgxMaskDirective,
     NgxMaskPipe,
@@ -31,11 +32,20 @@ const maskConfig: Partial<IConfig> = {
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    NgxLoadingModule,
+    // NgxLoadingModule,
     NgxDropzoneModule,
     NgxMaskDirective,
     NgxMaskPipe,
     ClipboardModule,
+
+    // for HttpClient use:
+    LoadingBarHttpClientModule,
+
+    // for Router use:
+    LoadingBarRouterModule,
+
+    // for Core use:
+    LoadingBarModule,
   ],
   providers: [provideEnvironmentNgxMask(maskConfig), provideNgxMask()],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
