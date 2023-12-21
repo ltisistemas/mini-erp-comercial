@@ -42,13 +42,13 @@ jobs:
       - name: Build Project
         run: yarn build
 
-      # - name: Deploy GH Pages
-      #   if: success()
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GitHub_Actions }}
-      #     publish_dir: dist/lti-mini-erp-comercial
-      #     enable_jekyll: false
+      - name: Deploy GH Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GitHub_Actions }}
+          publish_dir: dist/lti-mini-erp-comercial
+          enable_jekyll: false
   release:
     runs-on: ubuntu-latest
     needs: [build]
@@ -70,3 +70,5 @@ jobs:
       #     args: "dist/bin/ dist/shell/compiled.sh"
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GitHub_Actions }}
+permissions:
+  contents: write
