@@ -17,16 +17,23 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: yarn
+        run: yarn install --quiet
       - name: Build Project
         run: yarn build
-  release:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - name: Checkout Release
-        uses: actions/checkout@v4
-      - name: Create release
-        uses: Roang-zero1/github-create-release-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy GH Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist/lti-mini-erp-comercial
+          enable_jekyll: true
+  # release:
+  #   runs-on: ubuntu-latest
+  #   needs: [build]
+  #   steps:
+  #     - name: Checkout Release
+  #       uses: actions/checkout@v4
+  #     - name: Create release
+  #       uses: Roang-zero1/github-create-release-action@v2
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
