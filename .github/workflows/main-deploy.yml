@@ -7,6 +7,7 @@ on:
     branches: ["main"]
 
 jobs:
+  # Build job
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -49,26 +50,28 @@ jobs:
           github_token: ${{ secrets.GitHub_Actions }}
           publish_dir: dist/lti-mini-erp-comercial
           enable_jekyll: false
-  release:
-    runs-on: ubuntu-latest
+
+  # Deploy job
+  deploy:
     needs: [build]
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+      actions: read # to download an artifact uploaded by `actions/upload-pages-artifact@v3`
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout Release
         uses: actions/checkout@v4
-      # - name: Create release
-      #   uses: ncipollo/release-action@v1
-      #   with:
-      #     artifacts: "release.tar.gz,foo/*.txt"
-      #     bodyFile: "body.md"
-      # - name: Create release
-      #   uses: Roang-zero1/github-create-release-action@v2
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GitHub_Actions }}
-      # - name: Upload release artifacts
-      #   uses: Roang-zero1/github-upload-release-artifacts-action@v2
-      #   with:
-      #     args: "dist/bin/ dist/shell/compiled.sh"
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GitHub_Actions }}
-permissions:
-  contents: write
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
