@@ -5,7 +5,10 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   # Build job
   build:
@@ -13,6 +16,9 @@ jobs:
     strategy:
       matrix:
         node-version: [16, 18]
+    environment:
+      name: github-pages
+      # url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout Build
         uses: actions/checkout@v4
@@ -43,37 +49,48 @@ jobs:
       - name: Build Project
         run: yarn build
 
-      - name: Deploy GH Pages
-        if: success()
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Build
+        uses: actions/jekyll-build-pages@v1
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GitHub_Actions }}
-          publish_dir: dist/lti-mini-erp-comercial
-          enable_jekyll: false
+          path: "./dist/lti-mini-erp-comercial"
 
-  # Deploy job
-  deploy:
-    needs: [build]
+      # - name: Deploy GH Pages
+      #   if: success()
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GitHub_Actions }}
+      #     publish_dir: dist/lti-mini-erp-comercial
+      #     enable_jekyll: false
 
-    # Specify runner + deployment step
-    runs-on: ubuntu-latest
+  # # Deploy job
+  # deploy:
+  #   needs: [build]
 
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
-      actions: read # to download an artifact uploaded by `actions/upload-pages-artifact@v3`
+  #   # Specify runner + deployment step
+  #   runs-on: ubuntu-latest
 
-    # Deploy to the github-pages environment
-    # environment:
-    #   name: github-pages
-    #   url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout Release
-        uses: actions/checkout@v4
+  #   # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+  #   permissions:
+  #     pages: write # to deploy to Pages
+  #     id-token: write # to verify the deployment originates from an appropriate source
+  #     actions: read # to download an artifact uploaded by `actions/upload-pages-artifact@v3`
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3 # or specific "vX.X.X" version tag for this action
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/lti-mini-erp-comercial
+  #   # Deploy to the github-pages environment
+  #   # environment:
+  #   #   name: github-pages
+  #   #   url: ${{ steps.deployment.outputs.page_url }}
+  #   steps:
+  #     - name: Checkout Release
+  #       uses: actions/checkout@v4
+
+  #     - name: Deploy to GitHub Pages
+  #       uses: peaceiris/actions-gh-pages@v3 # or specific "vX.X.X" version tag for this action
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         publish_dir: ./dist/lti-mini-erp-comercial
