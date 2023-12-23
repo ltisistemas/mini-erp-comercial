@@ -8,7 +8,7 @@
 
 <div align="center">
 
-![Badge](https://img.shields.io/badge/LtiPDV-V1.0-%237159c1?style=flat-square&logo=ghost) ![Badge](https://img.shields.io/badge/Angular-V16-%237159c1?style=flat-square&logo=angular) ![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/ltisistemas/mini-erp-comercial/main) ![GitHub top language](https://img.shields.io/github/languages/top/ltisistemas/mini-erp-comercial) ![Deploy](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=main)
+![Badge](https://img.shields.io/badge/LtiPDV-V1.0-%237159c1?style=flat-square&logo=ghost) ![Badge](https://img.shields.io/badge/Angular-V16-%237159c1?style=flat-square&logo=angular) ![GitHub repo size](https://img.shields.io/github/repo-size/ltisistemas/mini-erp-comercial) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/ltisistemas/mini-erp-comercial/main) ![GitHub top language](https://img.shields.io/github/languages/top/ltisistemas/mini-erp-comercial) [![Build Main](https://github.com/ltisistemas/mini-erp-comercial/actions/workflows/main-deploy.yml/badge.svg?branch=main)](https://github.com/ltisistemas/mini-erp-comercial/actions/workflows/main-deploy.yml)
 
 </div>
 
