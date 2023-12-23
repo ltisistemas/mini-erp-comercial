@@ -90,7 +90,8 @@
                 "moment",
                 "cep-promise",
                 "bcryptjs"
-              ]
+              ],
+              "baseHref": "https://ltisistemas.github.io/mini-erp-comercial/"
             },
             "development": {
               "buildOptimizer": false,
