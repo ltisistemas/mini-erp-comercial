@@ -43,6 +43,11 @@
 
 ### Features
 
+- Workflow
+  - [x] Build
+  - [x] GH Pages
+  - [x] Badges
+  - [x] Config. Angular to GH Pages
 - Tela de Login
   - [x] Layout
   - [x] Funcionalidade
