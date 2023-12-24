@@ -6,7 +6,7 @@
 <h1 align="center">LTI PDV (Mini ERP Comercial)</h1>
 <p>🚀 Pequeno sistema de automação de lojas, focado em lojas de bairros, com um pratico e simples PDV e cadastro de produtos.</p>
 
-![DEMO PAGE](https://ltisistemas.github.io/mini-erp-comercial/)
+<h3 align="center">![DEMO PAGE](https://ltisistemas.github.io/mini-erp-comercial/)</h3>
 
 <div align="center">
 
