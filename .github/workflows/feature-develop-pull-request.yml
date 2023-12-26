@@ -58,7 +58,6 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         id: cpr
         with:
-          # token: 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
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           delete-branch: true
           draft: false
