@@ -63,7 +63,6 @@ jobs:
           delete-branch: true
           draft: false
           commit-message: Update report
-          committer: LTI Sistemas <luizltisistemas@gmail.com>
           assignees: ltisistemas
           reviewers: ltisistemas
           signoff: false
