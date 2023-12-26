@@ -44,22 +44,29 @@ jobs:
 
       - name: Build Project
         run: yarn build
-  Create:
+  createPullRequest:
     runs-on: ubuntu-latest
     needs: [build-dev]
     steps:
       - name: Checkout Build
         uses: actions/checkout@v4
 
+      - name: Make changes to pull request
+        run: date +%s > report.txt
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           delete-branch: true
           draft: false
           commit-message: Update report
+          committer: LTI Sistemas <luizltisistemas@gmail.com>
           assignees: ltisistemas
           reviewers: ltisistemas
+          signoff: false
+          branch: develop
           body: |
             Update report
             - Updated with *today's* date
