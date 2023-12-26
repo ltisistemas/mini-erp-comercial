@@ -1,4 +1,4 @@
-name: Create Pull Request to Develop
+name: Create Pull Request to Develop with Feature Name
 
 on:
   push:
