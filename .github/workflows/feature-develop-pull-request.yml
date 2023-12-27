@@ -57,13 +57,18 @@ jobs:
       - name: Update author information
         run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }} > AUTHOR
 
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         id: cpr
         with:
-          branch: auto-pr-branch
+          branch: ${{ steps.extract_branch.outputs.branch }}
           base: develop
-          title: "PR AUTOMATICO"
+          title: "PR AUTOMATICO ${{ steps.extract_branch.outputs.branch }} to Develop"
           token: ${{ secrets.ACTIONS }}
           commit-message: Update report
           body: |
