@@ -55,7 +55,7 @@ jobs:
         run: date +%s > report.txt
 
       - name: Update author information
-        run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }} > AUTHOR
+        run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }} > AUTHORS
 
       - name: Extract branch name
         shell: bash
@@ -68,7 +68,7 @@ jobs:
         with:
           branch: ${{ steps.extract_branch.outputs.branch }}
           base: develop
-          title: "PR AUTOMATICO ${{ steps.extract_branch.outputs.branch }} to Develop"
+          title: "PR AUTOMATICO >> [${{ steps.extract_branch.outputs.branch }}] to [DEV]"
           token: ${{ secrets.ACTIONS }}
           commit-message: Update report
           body: |
