@@ -66,8 +66,8 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         id: cpr
         with:
-          branch: ${{ steps.extract_branch.outputs.branch }}
-          base: develop
+          branch: develop
+          base: ${{ steps.extract_branch.outputs.branch }}
           title: "PR AUTOMATICO >> [${{ steps.extract_branch.outputs.branch }}] to [develop]"
           token: ${{ secrets.ACTIONS }}
           commit-message: Update report
