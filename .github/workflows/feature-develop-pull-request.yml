@@ -73,7 +73,6 @@ jobs:
           commit-message: Update report
           signoff: true
           assignees: ltisistemas
-          reviewers: ltisistemas
           body: |
             Update report
             - Updated with *today's* date
