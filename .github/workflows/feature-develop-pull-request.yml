@@ -64,7 +64,7 @@ jobs:
           branch: auto-pr-branch
           base: develop
           title: "PR AUTOMATICO"
-          token: ${{ secrets.APPROVER_DEMO }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Update report
           body: |
             Update report
