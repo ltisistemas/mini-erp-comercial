@@ -68,7 +68,7 @@ jobs:
         with:
           branch: ${{ steps.extract_branch.outputs.branch }}
           base: develop
-          title: "PR AUTOMATICO >> [${{ steps.extract_branch.outputs.branch }}] to [DEV]"
+          title: "PR AUTOMATICO >> [${{ steps.extract_branch.outputs.branch }}] to [develop]"
           token: ${{ secrets.ACTIONS }}
           commit-message: Update report
           body: |
