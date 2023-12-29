@@ -40,25 +40,21 @@ export class LoginComponent implements OnInit {
     let message = "";
     try {
       this.loadingService.$show.next(true);
-      // this.processando = true;
       const { email, password } = this.credentials.value;
 
       const response = await this.usecase.efetuarLogin(email, password);
       message = response.message;
 
       if (response.statusCode !== 200) {
-        // this.processando = false;
         this.loadingService.$show.next(false);
         this.snack.open(message, "Dispensar", { duration: 3500 });
         return;
       }
 
-      // this.processando = false;
       this.loadingService.$show.next(false);
       this.snack.open(response.message, "Dispensar", { duration: 3500 });
       this.router.navigateByUrl("");
     } catch (error) {
-      // this.processando = false;
       this.loadingService.$show.next(false);
       this.snack.open(message, "Dispensar", { duration: 3500 });
       return;
