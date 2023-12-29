@@ -14,10 +14,16 @@ import { SubCategoriasService } from "./services/sub-categorias.service";
 import { ListarSubCategoriasService } from "./use-cases/listar-sub-categorias.service ";
 import { IncluirSubCategoriaService } from "./use-cases/incluir-sub-categoria.service";
 import { EditarSubCategoriaService } from "./use-cases/editar-sub-categoria.service";
+import { CadastroProdutoComponent } from "./components/cadastro-produto/cadastro-produto.component";
 
 @NgModule({
   imports: [CommonModule, SharedModule],
-  declarations: [ProdutosComponent, CategoriasComponent, SubCategoriaComponent],
+  declarations: [
+    ProdutosComponent,
+    CategoriasComponent,
+    SubCategoriaComponent,
+    CadastroProdutoComponent,
+  ],
   providers: [
     ProdutosService,
     ListarProdutosService,

@@ -53,8 +53,8 @@ jobs:
       - name: Checkout Build
         uses: actions/checkout@v4
 
-      - name: Make changes to pull request
-        run: date +%s > report.txt
+      # - name: Make changes to pull request
+      #   run: date +%s > report.txt
 
       - name: Update author information
         run: echo ${{ env.GIT_COMMIT_AUTHOR_NAME }} > AUTHORS

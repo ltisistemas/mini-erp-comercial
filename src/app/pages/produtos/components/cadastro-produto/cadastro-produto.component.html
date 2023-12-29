@@ -1,0 +1,128 @@
+<ngx-loading-bar></ngx-loading-bar>
+<div class="container-page-dialog">
+  <h1 mat-dialog-title class="titulo-page">{{ titulo }}</h1>
+  <div mat-dialog-content>
+    <form [formGroup]="form">
+      <div class="linha">
+        <mat-form-field style="width: 100%; padding-top: 8px" cdkFocusInitial>
+          <mat-label>Nome</mat-label>
+          <input
+            type="text"
+            matInput
+            #inputnome
+            (focus)="inputnome.select()"
+            formControlName="nome"
+            cdkFocusInitial
+          />
+        </mat-form-field>
+        <mat-form-field style="width: 100%; padding-top: 8px">
+          <mat-label>Cód. Barras</mat-label>
+          <input
+            type="text"
+            matInput
+            #inputcodigo_barras
+            (focus)="inputcodigo_barras.select()"
+            formControlName="codigo_barras"
+          />
+        </mat-form-field>
+      </div>
+      <div class="linha">
+        <mat-form-field style="width: 100%; padding-top: 8px" cdkFocusInitial>
+          <mat-label>QR Code</mat-label>
+          <input
+            type="text"
+            matInput
+            #inputqr_code
+            (focus)="inputqr_code.select()"
+            formControlName="qr_code"
+            cdkFocusInitial
+          />
+        </mat-form-field>
+        <mat-form-field style="width: 100%; padding-top: 8px">
+          <mat-label>NCM</mat-label>
+          <input
+            type="text"
+            matInput
+            #inputncm
+            (focus)="inputncm.select()"
+            formControlName="ncm"
+          />
+        </mat-form-field>
+      </div>
+      <div class="linha">
+        <mat-form-field style="width: 100%; padding-top: 8px">
+          <mat-label>Categoria</mat-label>
+          <button
+            matPrefix
+            mat-icon-button
+            color="primary"
+            (click)="categoriaF2()"
+          >
+            <mat-icon>search</mat-icon>
+          </button>
+          <input
+            type="text"
+            matInput
+            #inputcategoria_id
+            (focus)="inputcategoria_id.select()"
+            formControlName="categoria_id"
+            [disabled]="true"
+            style="user-select: none"
+            (keyup.f2)="categoriaF2()"
+          />
+          <button
+            matSuffix
+            mat-icon-button
+            (click)="limparCategoria(inputcategoria_id)"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field style="width: 100%; padding-top: 8px">
+          <mat-label>Sub-Categoria</mat-label>
+          <button
+            matPrefix
+            mat-icon-button
+            color="primary"
+            (click)="subCategoriaF2()"
+          >
+            <mat-icon>search</mat-icon>
+          </button>
+          <input
+            type="text"
+            matInput
+            #inputsub_categoria_id
+            (focus)="inputsub_categoria_id.select()"
+            formControlName="sub_categoria_id"
+            [disabled]="true"
+            (keyup.f2)="subCategoriaF2()"
+          />
+          <button
+            matSuffix
+            mat-icon-button
+            (click)="limparSubCategoria(inputsub_categoria_id)"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <mat-form-field style="width: 100%; padding-top: 8px">
+        <mat-label>Descrição</mat-label>
+        <textarea
+          matInput
+          cols="30"
+          rows="5"
+          #inputdescricao
+          (focus)="inputdescricao.select()"
+          formControlName="descricao"
+        ></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button color="warn" (click)="onNoClick()">Fechar</button>
+    <button mat-flat-button color="primary" (click)="onHanddle()">
+      Salvar
+    </button>
+  </div>
+</div>
